@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wingfoil Force Measurement System | Isla Stiven</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Page-specific readability + figure styling.
+     Once you're happy with this pattern across all project pages,
+     move this whole <style> block into style.css and delete it from each page. -->
+<style>
+  /* Auto-number the sections and give each a clear, scannable header */
+  .detail-body { counter-reset: sec; }
+
+  .detail-body section { margin: 0 0 2.75rem; }
+  .detail-body section:last-child { margin-bottom: 0; }
+
+  .detail-body h4 {
+    counter-increment: sec;
+    font-family: var(--font-mono, "IBM Plex Mono", monospace);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule, #e4e4e4);
+  }
+  .detail-body h4::before {
+    content: counter(sec, decimal-leading-zero) "  /  ";
+    color: var(--signal, #e5533c);
+  }
+
+  /* Comfortable reading measure and rhythm */
+  .detail-body p {
+    line-height: 1.7;
+    max-width: 68ch;
+    margin: 0 0 1rem;
+  }
+  .detail-body p:last-child { margin-bottom: 0; }
+
+  /* Lead paragraph of the page reads a touch larger */
+  .detail-body section:first-of-type p:first-of-type {
+    font-size: 1.08rem;
+    color: var(--ink, #1a1a1a);
+  }
+
+  /* Figures: constrained width, centered, with a captioned block */
+  .detail-body .figframe {
+    max-width: 600px;
+    margin: 1.5rem auto 0.6rem;
+  }
+  .detail-body .figframe img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .detail-body figcaption {
+    font-family: var(--font-mono, "IBM Plex Mono", monospace);
+    font-size: 0.72rem;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+    color: var(--muted, #6b6b6b);
+    margin-top: 0.6rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--signal, #e5533c);
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark">IS</span><span class="name">Isla Stiven</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="detail-hero">
+  <div class="wrap">
+    <a class="back" href="index.html#projects">&larr; Back to Projects</a>
+    <p class="org">Tagmata Materials &middot; P-01</p>
+    <h1>Wingfoil Force<br>Measurement System</h1>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="detail-grid">
+    <div class="detail-body">
+
+      <section>
+        <h4>Overview</h4>
+        <p>A robust, fully sealed force-sensing system for R&amp;D purposes, currently in the building and testing phase. Wind sport wing makers had no quantitative way to measure the forces a rider generates through the handle, the same forces that directly drive wing performance. The goal was to design, build, and validate a system that logs front- and rear-hand loads during live saltwater sessions while staying accurate, waterproof, and true to the riding experience.</p>
+        <figure class="figframe">
+          <img src="wing.png" alt="CAD of wing foil wing + force measurement handle">
+          <figcaption>CAD of the wing and the integrated force-measurement handle.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h4>Mounting &amp; Force Measurement</h4>
+        <p>The rider's hands act on a carbon fiber auxiliary boom that doubles as the handle and electronics housing. A custom-designed wing attachment lets the measurement handle swap in for the original wing boom, making the test system non-invasive and easy to remove. Two inline load cells, one front and one rear, capture each hand's force independently throughout the session. Dowel pins were designed to prevent any bending of the load cells.</p>
+        <figure class="figframe">
+          <img src="forcemeasdia.png" alt="Labeled CAD of the mounting assembly: boom, clamp, boom bracket, load cell, pins, and straps on the wing">
+          <figcaption>Mounting assembly: boom, clamp, boom bracket, inline load cell, dowel pins, and wing straps.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h4>Waterproof Boom Seal</h4>
+        <p>The electronics live sealed inside the carbon fiber boom, so the end caps had to be fully waterproof and corrosion-resistant for repeated saltwater use. The end cap design uses a ferrule-compression seal: a sleeve slides onto the boom, then a ferrule, then a threaded cap carrying an O-ring seated in a groove.</p>
+        <figure class="figframe">
+          <img src="endcapdia.png" alt="Exploded CAD view of the end cap seal: cap, O-ring, ferrule, sleeve, and carbon fiber boom">
+          <figcaption>Exploded view of the end-cap seal: cap, O-ring, ferrule, sleeve, and carbon fiber boom.</figcaption>
+        </figure>
+        <p>Threading the cap down compresses the ferrule between the cap and sleeve, converting that make-up force into axial compression on the O-ring, energizing it against the groove and tube to form the seal. Roughening the boom's outer surface on the lathe measurably improved grip and seal reliability. The machined caps below include a two-wire cable gland for the load cell leads.</p>
+        <figure class="figframe">
+          <img src="endcapmachined.png" alt="Finished machined end caps with O-rings and a sealed cable gland">
+          <figcaption>Machined end caps with O-rings and a sealed two-wire cable gland.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h4>Electronics &amp; Data Logging</h4>
+        <p>Inside the sealed boom, an ESP32-S3 microcontroller reads the load cells through dual 24-bit ADCs, alongside a 9-DOF IMU for orientation tracking. The package runs off four isolated power rails and a LiPo pack, and logs synchronized force and orientation data to an SD card for post-session analysis.</p>
+      </section>
+
+      <section>
+        <h4>Analysis &amp; Validation</h4>
+        <p>The structure was simulated under a worst-case gust load to ensure reliability and safety. Power and error budgets were created alongside an FMEA / HARA risk analysis. The seal was validated with O-ring squeeze, gland-fill, and sealing-pressure-margin calculations to define a safe operating envelope for depth and pressure.</p>
+      </section>
+
+      <section>
+        <h4>Field Deployment</h4>
+        <p>The wing force measurement system is currently (July 2026) being tested for waterproofing, force measurement accuracy, and durability. The prototype is scheduled to be on the water by mid July. Stay tuned.</p>
+        <figure class="figframe">
+          <img src="attachmentonwing.png" alt="The force measurement mount strapped to a wing during an on-water session">
+          <figcaption>The measurement handle strapped to the wing during on-water testing.</figcaption>
+        </figure>
+      </section>
+
+    </div>
+
+    <dl class="titleblock">
+      <div class="tb-top"><span>Details</span><b>P-01</b></div>
+      <div class="tb-row"><dt>Org</dt><dd>Tagmata Materials</dd></div>
+      <div class="tb-row"><dt>Timeframe</dt><dd>Jan 2026 &ndash; Present</dd></div>
+      <div class="tb-row"><dt>Role</dt><dd>Mechanical / Mechatronics</dd></div>
+      <div class="tb-row"><dt>Domain</dt><dd>Instrumentation &middot; Sealing</dd></div>
+      <div class="tb-row"><dt>Key Tools</dt><dd>SolidWorks &middot; FEA &middot; ESP32-S3 &middot; 24-bit ADC &middot; IMU</dd></div>
+    </dl>
+  </div>
+</div>
+
+<footer>
+  <div class="titlegrid">
+    <div class="tg"><span class="k">Drawn By</span><span class="v sig">Isla Stiven</span></div>
+    <div class="tg"><span class="k">Title</span><span class="v">Wingfoil FMS</span></div>
+    <div class="tg"><span class="k">Location</span><span class="v">Victoria, BC</span></div>
+    <div class="tg"><span class="k">Date</span><span class="v">2026</span></div>
+    <div class="tg"><span class="k">Sheet</span><span class="v">P-01</span></div>
+    <div class="tg"><span class="k">Rev</span><span class="v">A</span></div>
+  </div>
+  <div class="footnote">&copy; 2026 Isla Stiven &middot; Mechanical Engineering</div>
+</footer>
+
+</body>
+</html>
