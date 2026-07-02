@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FSAE Suspension A-Arm Nodes | Isla Stiven</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Page-specific readability + figure styling.
+     Once you're happy with this pattern across all project pages,
+     move this whole <style> block into style.css and delete it from each page. -->
+<style>
+  /* Auto-number the sections and give each a clear, scannable header */
+  .detail-body { counter-reset: sec; }
+
+  .detail-body section { margin: 0 0 2.75rem; }
+  .detail-body section:last-child { margin-bottom: 0; }
+
+  .detail-body h4 {
+    counter-increment: sec;
+    font-family: var(--font-mono, "IBM Plex Mono", monospace);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule, #e4e4e4);
+  }
+  .detail-body h4::before {
+    content: counter(sec, decimal-leading-zero) "  /  ";
+    color: var(--signal, #e5533c);
+  }
+
+  /* Comfortable reading measure and rhythm */
+  .detail-body p {
+    line-height: 1.7;
+    max-width: 68ch;
+    margin: 0 0 1rem;
+  }
+  .detail-body p:last-child { margin-bottom: 0; }
+
+  /* Lists read at the same measure as the prose */
+  .detail-body ul {
+    max-width: 68ch;
+    margin: 0 0 1rem;
+    padding-left: 1.2rem;
+  }
+  .detail-body li {
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Lead paragraph of the page reads a touch larger */
+  .detail-body section:first-of-type p:first-of-type {
+    font-size: 1.08rem;
+    color: var(--ink, #1a1a1a);
+  }
+
+  /* Figures: constrained width, centered, with a captioned block */
+  .detail-body .figframe {
+    max-width: 600px;
+    margin: 1.5rem auto 0.6rem;
+  }
+  .detail-body .figframe img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .detail-body figcaption {
+    font-family: var(--font-mono, "IBM Plex Mono", monospace);
+    font-size: 0.72rem;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+    color: var(--muted, #6b6b6b);
+    margin-top: 0.6rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--signal, #e5533c);
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark">IS</span><span class="name">Isla Stiven</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="detail-hero">
+  <div class="wrap">
+    <a class="back" href="index.html#projects">&larr; Back to Projects</a>
+    <p class="org">UVic Formula Racing &middot; P-02</p>
+    <h1>FSAE Suspension<br>A-Arm Nodes</h1>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="detail-grid">
+    <div class="detail-body">
+
+      <section>
+        <h4>Overview</h4>
+        <p>Design of aluminum suspension A-arm nodes for the University of Victoria EV race car, the machined joints that connect the suspension arms to carbon fiber tubes. The aim was to make each node as light as possible while still safely meeting the kinematic constraints and carrying the loads the suspension sees on track.</p>
+        <figure class="figframe">
+          <img src="nodecad.png" alt="Front-Upper A-Arm Node">
+          <figcaption>CAD of the front-upper A-arm node.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h4>What I Did</h4>
+        <ul>
+          <li>Simulated maximum suspension load cases in Dynatune, then sized bond length with tear-out calculations and tube diameter with maximum-stress calculations.</li>
+          <li>Designed four aluminum A-arm nodes in SolidWorks using FEA and topology optimization while meeting the geometric constraints.</li>
+          <li>Achieved substantial mass reduction per component (in the range of 64 to 70 percent) while holding the required safety factors.</li>
+          <li>Applied design-for-manufacturing principles to turn the optimized shapes into CNC-machinable aluminum parts bonded to carbon fiber tubes.</li>
+        </ul>
+        <figure class="figframe">
+          <img src="feaexample.png" alt="FEA Simulation Example with Factor of Safety Plot">
+          <figcaption>FEA of a node with its factor-of-safety plot.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h4>Focus</h4>
+        <p>Structural design, simulation-driven optimization, technical documentation, and manufacturability for a competitive motorsport application.</p>
+        <figure class="figframe">
+          <img src="machinednode.png" alt="Front Upper A-arm Node Machined">
+          <figcaption>The finished front-upper node after CNC machining.</figcaption>
+        </figure>
+        <figure class="figframe">
+          <img src="assemblednodes.png" alt="Aluminum A-Arm Node + Carbon Fiber Tube Assembly">
+          <figcaption>Aluminum node bonded to a carbon fiber tube in the assembled A-arm.</figcaption>
+        </figure>
+      </section>
+
+    </div>
+
+    <dl class="titleblock">
+      <div class="tb-top"><span>Details</span><b>P-02</b></div>
+      <div class="tb-row"><dt>Org</dt><dd>UVic Formula Racing</dd></div>
+      <div class="tb-row"><dt>Timeframe</dt><dd>Feb 2026 &ndash; Apr 2026</dd></div>
+      <div class="tb-row"><dt>Role</dt><dd>Mechanical Design</dd></div>
+      <div class="tb-row"><dt>Domain</dt><dd>Structures &middot; DFM</dd></div>
+      <div class="tb-row"><dt>Key Tools</dt><dd>SolidWorks &middot; FEA &middot; Topology Opt &middot; DFM &middot; SolidWorks PDM &middot; Dynatune</dd></div>
+    </dl>
+  </div>
+</div>
+
+<footer>
+  <div class="titlegrid">
+    <div class="tg"><span class="k">Drawn By</span><span class="v sig">Isla Stiven</span></div>
+    <div class="tg"><span class="k">Title</span><span class="v">A-Arm Nodes</span></div>
+    <div class="tg"><span class="k">Location</span><span class="v">Victoria, BC</span></div>
+    <div class="tg"><span class="k">Date</span><span class="v">2026</span></div>
+    <div class="tg"><span class="k">Sheet</span><span class="v">P-02</span></div>
+    <div class="tg"><span class="k">Rev</span><span class="v">A</span></div>
+  </div>
+  <div class="footnote">&copy; 2026 Isla Stiven &middot; Mechanical Engineering</div>
+</footer>
+
+</body>
+</html>
