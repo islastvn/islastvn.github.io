@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CTC j-Chip Microfluidic Device | Isla Stiven</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Page-specific readability + figure styling.
+     Once you're happy with this pattern across all project pages,
+     move this whole <style> block into style.css and delete it from each page. -->
+<style>
+  /* Auto-number the sections and give each a clear, scannable header */
+  .detail-body { counter-reset: sec; }
+
+  .detail-body section { margin: 0 0 2.75rem; }
+  .detail-body section:last-child { margin-bottom: 0; }
+
+  .detail-body h4 {
+    counter-increment: sec;
+    font-family: var(--font-mono, "IBM Plex Mono", monospace);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule, #e4e4e4);
+  }
+  .detail-body h4::before {
+    content: counter(sec, decimal-leading-zero) "  /  ";
+    color: var(--signal, #e5533c);
+  }
+
+  /* Comfortable reading measure and rhythm */
+  .detail-body p {
+    line-height: 1.7;
+    max-width: 68ch;
+    margin: 0 0 1rem;
+  }
+  .detail-body p:last-child { margin-bottom: 0; }
+
+  /* Lists read at the same measure as the prose */
+  .detail-body ul,
+  .detail-body ol {
+    max-width: 68ch;
+    margin: 0 0 1rem;
+    padding-left: 1.2rem;
+  }
+  .detail-body li {
+    line-height: 1.7;
+    margin-bottom: 0.6rem;
+  }
+  .detail-body li:last-child { margin-bottom: 0; }
+
+  /* Lead paragraph of the page reads a touch larger */
+  .detail-body section:first-of-type p:first-of-type {
+    font-size: 1.08rem;
+    color: var(--ink, #1a1a1a);
+  }
+
+  /* Figures: constrained width, centered, with a captioned block */
+  .detail-body .figframe {
+    max-width: 600px;
+    margin: 1.5rem auto 0.6rem;
+    display: block;
+    overflow: visible;
+    padding: 0;
+  }
+  .detail-body .figframe img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0;
+  }
+  .detail-body figcaption {
+    font-family: var(--font-mono, "IBM Plex Mono", monospace);
+    font-size: 0.72rem;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+    color: var(--muted, #6b6b6b);
+    margin-top: 0.6rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--signal, #e5533c);
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark">IS</span><span class="name">Isla Stiven</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="detail-hero">
+  <div class="wrap">
+    <a class="back" href="index.html#projects">&larr; Back to Projects</a>
+    <p class="org">UVic &middot; MECH 452 &middot; P-03</p>
+    <h1>CTC j-Chip<br>Microfluidic Device</h1>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="detail-grid">
+    <div class="detail-body">
+
+      <section>
+        <h4>Overview</h4>
+        <p>The CTC j-Chip is a microfluidic device that detects and isolates circulating tumor cells (CTCs) from a blood sample, developed as a team microfluidics project. CTCs are shed from primary tumors into the bloodstream and are important early indicators of cancer, but they are vanishingly rare, on the order of 1&ndash;10 cells per millilitre of blood among billions of other cells, which makes isolating them difficult. The chip separates them by size and magnetic labelling, working toward a low-cost, handheld point-of-care screening tool.</p>
+      </section>
+
+      <section>
+        <h4>How It Works</h4>
+        <p>The device isolates CTCs in three stages on a single chip, feeding blood and a buffer solution in at the top and collecting an enriched sample at the bottom.</p>
+        <figure class="figframe">
+          <img src="isolatedctcs.png" alt="Labeled CAD of the CTC j-Chip showing the DLD region, inertial focusing region, magnets, and where isolated CTCs collect">
+          <figcaption>Labeled CAD of the j-Chip: DLD region, inertial focusing region, magnets, and the isolated-CTC outlet.</figcaption>
+        </figure>
+        <ol>
+          <li><strong>Deterministic Lateral Displacement (DLD).</strong> Blood and buffer pass through an array of micro-posts. Cells above a ~4 &micro;m critical diameter (CTCs and white blood cells) are continuously deflected at a 1.7&deg; angle in "bump mode" toward one side, while smaller cells zig-zag straight through to a waste outlet. This is a purely geometric, size-based sort.</li>
+          <li><strong>Inertial Focusing.</strong> A serpentine channel with alternating cross-sections increases particle interaction, encouraging CD45 antibodies carried in the buffer to bind magnetic beads onto the white blood cells.</li>
+          <li><strong>Magnetically Assisted Cell Separation (MACS).</strong> Magnets hold the bead-labelled white blood cells against the channel wall while the unlabelled CTCs flow past and collect at the outlet, leaving an isolated CTC sample.</li>
+        </ol>
+        <p>Two choices set the design apart: gravity-driven flow, which removes the need for external pumps so the device can run by hand, and an integrated impedance sensor to count the isolated CTCs electrically rather than relying on bulky lab equipment.</p>
+      </section>
+
+      <section>
+        <h4>Design</h4>
+        <p>The chip was modelled and optimized in SolidWorks, with channel geometry derived from microfluidic theory. The DLD channel length, for example, was sized from the deflection angle (Length = Width / tan 1.7&deg;) so labelled cells fully traverse the channel, and the micro-post dimensions and critical-diameter targets were grounded in published CTC-isolation studies.</p>
+      </section>
+
+      <section>
+        <h4>Manufacturing</h4>
+        <p>The prototype was 3D printed in resin on a DLP printer. DLP resolution couldn't reproduce the fine micro-post array, so a partial model including the Y-inlet, inertial focusing region, and MACS region was printed to validate mixing and flow. Future iterations would move to higher-resolution SLA printing (or silicon) to realize the micro-posts.</p>
+        <figure class="figframe">
+          <img src="ctcjchip.png" alt="3D-printed resin prototype of the CTC j-Chip showing the Y-inlet and serpentine channels">
+          <figcaption>3D-printed resin prototype showing the Y-inlet and serpentine channels.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h4>Testing &amp; Results</h4>
+        <p>The prototype was tested in the UVic lab using two pumps: red fluid simulating blood, green simulating the buffer. The fluids moved cleanly through the microchannels and mixed uniformly through the inertial focusing region with no backflow or leakage, then exited smoothly, confirming good channel alignment, joint integrity, and fluid-handling performance. The micro-posts, magnets, and beads were outside the prototype's scope, so their performance wasn't part of this test.</p>
+      </section>
+
+      <section>
+        <h4>Focus</h4>
+        <p>Microfluidic design, size-based cell separation, CAD modelling, DLP, and fluid-dynamics validation.</p>
+      </section>
+
+    </div>
+
+    <dl class="titleblock">
+      <div class="tb-top"><span>Details</span><b>P-03</b></div>
+      <div class="tb-row"><dt>Course</dt><dd>UVic &middot; MECH 452</dd></div>
+      <div class="tb-row"><dt>Timeframe</dt><dd>Summer 2024</dd></div>
+      <div class="tb-row"><dt>Domain</dt><dd>Microfluidics &middot; Biomedical</dd></div>
+      <div class="tb-row"><dt>Key Tools</dt><dd>SolidWorks &middot; DLP &middot; Fluid Dynamics</dd></div>
+    </dl>
+  </div>
+</div>
+
+<footer>
+  <div class="titlegrid">
+    <div class="tg"><span class="k">Drawn By</span><span class="v sig">Isla Stiven</span></div>
+    <div class="tg"><span class="k">Title</span><span class="v">CTC j-Chip</span></div>
+    <div class="tg"><span class="k">Location</span><span class="v">Victoria, BC</span></div>
+    <div class="tg"><span class="k">Date</span><span class="v">2026</span></div>
+    <div class="tg"><span class="k">Sheet</span><span class="v">P-03</span></div>
+    <div class="tg"><span class="k">Rev</span><span class="v">A</span></div>
+  </div>
+  <div class="footnote">&copy; 2026 Isla Stiven &middot; Mechanical Engineering</div>
+</footer>
+
+</body>
+</html>
