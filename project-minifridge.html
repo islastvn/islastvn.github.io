@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Fridge Optimization Study | Isla Stiven</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Page-specific readability + figure styling.
+     Once you're happy with this pattern across all project pages,
+     move this whole <style> block into style.css and delete it from each page. -->
+<style>
+  /* Auto-number the sections and give each a clear, scannable header */
+  .detail-body { counter-reset: sec; }
+
+  .detail-body section { margin: 0 0 2.75rem; }
+  .detail-body section:last-child { margin-bottom: 0; }
+
+  .detail-body h4 {
+    counter-increment: sec;
+    font-family: var(--font-mono, "IBM Plex Mono", monospace);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule, #e4e4e4);
+  }
+  .detail-body h4::before {
+    content: counter(sec, decimal-leading-zero) "  /  ";
+    color: var(--signal, #e5533c);
+  }
+
+  /* Comfortable reading measure and rhythm */
+  .detail-body p {
+    line-height: 1.7;
+    max-width: 68ch;
+    margin: 0 0 1rem;
+  }
+  .detail-body p:last-child { margin-bottom: 0; }
+
+  /* Lists read at the same measure as the prose */
+  .detail-body ul,
+  .detail-body ol {
+    max-width: 68ch;
+    margin: 0 0 1rem;
+    padding-left: 1.2rem;
+  }
+  .detail-body li {
+    line-height: 1.7;
+    margin-bottom: 0.6rem;
+  }
+  .detail-body li:last-child { margin-bottom: 0; }
+
+  /* Lead paragraph of the page reads a touch larger */
+  .detail-body section:first-of-type p:first-of-type {
+    font-size: 1.08rem;
+    color: var(--ink, #1a1a1a);
+  }
+
+  /* Figures: constrained width, centered, with a captioned block */
+  .detail-body .figframe {
+    max-width: 600px;
+    margin: 1.5rem auto 0.6rem;
+  }
+  .detail-body .figframe img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .detail-body figcaption {
+    font-family: var(--font-mono, "IBM Plex Mono", monospace);
+    font-size: 0.72rem;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+    color: var(--muted, #6b6b6b);
+    margin-top: 0.6rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--signal, #e5533c);
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark">IS</span><span class="name">Isla Stiven</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="detail-hero">
+  <div class="wrap">
+    <a class="back" href="index.html#projects">&larr; Back to Projects</a>
+    <p class="org">UVic &middot; MECH 493 &middot; P-04</p>
+    <h1>Mini Fridge<br>Optimization Study</h1>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="detail-grid">
+    <div class="detail-body">
+
+      <section>
+        <h4>Overview</h4>
+        <p>A team course project analysing an inoperable 1991 mini fridge (Citizen JRF 248I, running the old CFC refrigerant R-12) to model its refrigeration cycle and evaluate practical efficiency and sustainability improvements.</p>
+        <figure class="figframe">
+          <img src="fridgedestruction.png" alt="The mini fridge disassembled on a lab bench, insulation removed to expose the components">
+          <figcaption>The 1991 mini fridge disassembled, with insulation removed to expose the refrigeration components.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h4>Approach</h4>
+        <p>We tore the fridge down and isolated the refrigeration cycle completely to identify its components and cycle properties, then built steady-state thermal models (Tespy, Excel, MATLAB) of the baseline system and every improvement permutation so they could be ranked by annual energy and cost.</p>
+        <p>Four improvements were considered:</p>
+        <ul>
+          <li>Swapping the R-12 refrigerant for R-600a (isobutane).</li>
+          <li>Replacing the polyurethane foam insulation with low-density cork.</li>
+          <li>Fitting a modern compressor.</li>
+          <li>Moving the condenser outside the cabinet.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Results</h4>
+        <p>Individually, the cork insulation, selected using Ansys Granta EduPack, cut evaporator heat by about 26 percent, and a modern compressor cut electricity use by about 33 percent, while the cleaner R-600a refrigerant traded higher energy use for much lower environmental impact. The practical set of improvements reduced energy use by about 79 kWh/yr, only about $10/yr at BC Hydro rates, which doesn't pay back the roughly $155 upgrade cost within the fridge's realistic lifespan. The real value is eliminating the CFC refrigerant and using sustainable materials.</p>
+      </section>
+
+      <section>
+        <h4>Focus</h4>
+        <p>Refrigeration-cycle analysis, heat-transfer modelling, and thermo-fluid system evaluation.</p>
+      </section>
+
+    </div>
+
+    <dl class="titleblock">
+      <div class="tb-top"><span>Details</span><b>P-04</b></div>
+      <div class="tb-row"><dt>Course</dt><dd>UVic &middot; MECH 493</dd></div>
+      <div class="tb-row"><dt>Timeframe</dt><dd>Spring 2026</dd></div>
+      <div class="tb-row"><dt>Role</dt><dd>Team Project</dd></div>
+      <div class="tb-row"><dt>Domain</dt><dd>Thermo-Fluids</dd></div>
+      <div class="tb-row"><dt>Key Tools</dt><dd>Tespy &middot; MATLAB &middot; Excel</dd></div>
+    </dl>
+  </div>
+</div>
+
+<footer>
+  <div class="titlegrid">
+    <div class="tg"><span class="k">Drawn By</span><span class="v sig">Isla Stiven</span></div>
+    <div class="tg"><span class="k">Title</span><span class="v">Mini Fridge Study</span></div>
+    <div class="tg"><span class="k">Location</span><span class="v">Victoria, BC</span></div>
+    <div class="tg"><span class="k">Date</span><span class="v">2026</span></div>
+    <div class="tg"><span class="k">Sheet</span><span class="v">P-04</span></div>
+    <div class="tg"><span class="k">Rev</span><span class="v">A</span></div>
+  </div>
+  <div class="footnote">&copy; 2026 Isla Stiven &middot; Mechanical Engineering</div>
+</footer>
+
+</body>
+</html>
