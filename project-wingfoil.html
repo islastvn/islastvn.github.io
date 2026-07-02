@@ -35,26 +35,26 @@
     <div class="detail-body">
 
       <h4>Overview</h4>
-      <p>A rugged, fully sealed force-sensing system for wingfoil athletes, developed as my capstone project. Wing makers had no quantitative way to measure the forces a rider generates through the handle &mdash; forces that directly drive wing performance. The goal was to design, build, and validate a system that logs front- and rear-hand loads during live saltwater sessions while staying accurate, waterproof, and structurally sound.</p>
+      <p>A robust, fully sealed force-sensing system for R&D purposes, currently in the building and testing phase. Wind sport wing makers had no quantitative way to measure the forces a rider generates through the handle &dash; forces that directly drive wing performance. The goal was to design, build, and validate a system that logs front- and rear-hand loads during live saltwater sessions while staying accurate, waterproof, and not altering the riding experience.</p>
 
       <h4>Mounting &amp; Force Measurement</h4>
-      <p>The rider's hands act on a carbon fiber auxiliary boom. A clamp and boom bracket transfer that load into an inline load cell, pinned in place, with straps securing the assembly to the wing. Using two inline load cells &mdash; one front, one rear &mdash; lets each hand's force be captured independently through the session rather than as a single combined reading.</p>
+      <p>The rider's hands act on a carbon fiber auxiliary boom which doubles as the handle and electronics housing. A custom designed wing attachment allows for the measurement handle to be swapped easily with the original wing boom/handles for a non-invasive and easy to remove testing system. Using two inline load cells, one front and one rear lets each hand's force be captured independently through the session. Dowel pins were designed to prevent any bending of the load cell. </p>
       <div class="figframe"><img src="forcemeasdia.png" alt="Labeled CAD of the mounting assembly: boom, clamp, boom bracket, load cell, pins, and straps on the wing"></div>
 
       <h4>Waterproof Boom Seal</h4>
-      <p>The electronics live sealed inside the carbon fiber boom, so the end caps had to be genuinely waterproof for repeated saltwater use. I designed a ferrule-compression seal: a sleeve slides onto the boom, then a ferrule, then a threaded cap carrying an AS568-124 O-ring seated in a groove.</p>
+      <p>The electronics live sealed inside the carbon fiber boom, so the end caps had fully waterproof and corrosion-resistant for repeated saltwater use. The end cap design uses a ferrule-compression seal: a sleeve slides onto the boom, then a ferrule, then a threaded cap carrying an O-ring seated in a groove.</p>
       <div class="figframe"><img src="endcapdia.png" alt="Exploded CAD view of the end cap seal: cap, O-ring, ferrule, sleeve, and carbon fiber boom"></div>
-      <p>Threading the cap down compresses the ferrule between the cap and sleeve, converting that make-up force into <strong>axial compression on the O-ring</strong> &mdash; energizing it against the groove and tube to form the seal. Roughening the boom's outer surface on the lathe measurably improved grip and seal reliability. The machined caps below include a sealed cable gland for the sensor lead.</p>
+      <p>Threading the cap down compresses the ferrule between the cap and sleeve, converting that make-up force into axial compression on the O-ring -energizing it against the groove and tube to form the seal. Roughening the boom's outer surface on the lathe measurably improved grip and seal reliability. The machined caps below include two-wire cable gland for the load cell leads.</p>
       <div class="figframe"><img src="endcapmachined.png" alt="Finished machined end caps with O-rings and a sealed cable gland"></div>
 
       <h4>Electronics &amp; Data Logging</h4>
-      <p>Inside the sealed boom, an ESP32-S3 microcontroller reads the load cells through dual 24-bit ADCs, alongside a 9-DOF IMU for orientation. The package runs off four isolated power rails and a LiPo pack, and logs synchronized force and orientation data to an SD card for post-session analysis.</p>
+      <p>Inside the sealed boom, an ESP32-S3 microcontroller reads the load cells through dual 24-bit ADCs, alongside a 9-DOF IMU for orientation tracking. The package runs off four isolated power rails and a LiPo pack, and logs synchronized force and orientation data to an SD card for post-session analysis.</p>
 
       <h4>Analysis &amp; Validation</h4>
-      <p>I sized the structure with hand calculations and FEA against a worst-case gust load, and built power, error, and reliability budgets alongside an FMEA / HARA risk analysis. The seal was validated with O-ring squeeze, gland-fill, and sealing-pressure-margin calculations to define a safe operating envelope for depth and pressure.</p>
+      <p>The structure was simulated in a worst-case gust load to ensure reliability and safety. Power and error budgets were created alongside an FMEA / HARA risk analysis. The seal was validated with O-ring squeeze, gland-fill, and sealing-pressure-margin calculations to define a safe operating envelope for depth and pressure.</p>
 
       <h4>Field Deployment</h4>
-      <p>The system strapped to a wing during on-water testing &mdash; the whole point being data captured in real conditions, not on a bench.</p>
+      <p>The wing force measurement system is currently (July 2026) being tested for waterproofing, force measurement accuracy, and durability. Prototype is scheduled to be on the water by mid July, stay tuned!</p>
       <div class="figframe"><img src="attachmentonwing.png" alt="The force measurement mount strapped to a wing during an on-water session"></div>
 
     </div>
