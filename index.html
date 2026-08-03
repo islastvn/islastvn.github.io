@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isla Stiven's Engineering Portfolio</title>
+<meta name="description" content="Portfolio of Isla Stiven, mechanical engineering student at the University of Victoria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- ===== Experience section styles (added). You can move this into style.css if you prefer. ===== -->
+<style>
+  .exp-list{display:flex;flex-direction:column;gap:18px;margin-top:28px}
+  .exp{display:grid;grid-template-columns:200px 1fr;gap:22px;padding:20px;
+       border:1px solid color-mix(in srgb,currentColor 15%,transparent);border-radius:14px}
+  .exp-media{display:flex;flex-direction:column;gap:10px}
+  .exp-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:10px;
+             border:1px solid color-mix(in srgb,currentColor 15%,transparent);
+             background:color-mix(in srgb,currentColor 6%,transparent)}
+  .exp-caption{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.03em;
+               opacity:.6;text-align:center;margin:0}
+  .exp-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+  .exp-idx,.exp-dates{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;opacity:.6}
+  .exp-role{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.15rem;line-height:1.2;margin:.4rem 0 .2rem}
+  .exp-org{font-family:'IBM Plex Mono',monospace;font-size:.8rem;opacity:.7;margin:0 0 .6rem}
+  .exp-context{margin:0 0 .85rem;opacity:.9}
+  .exp-summary{margin:0 0 .9rem;line-height:1.6}
+  .exp-bullets{margin:0 0 1rem;padding-left:1.15rem;line-height:1.7}
+  .exp-bullets li{margin-bottom:.35rem}
+  @media(max-width:640px){.exp{grid-template-columns:1fr;gap:18px;padding:20px}}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">IS</span>
+      <span class="name">Isla Stiven</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker reveal">Mechanical Engineering</p>
+    <h1 class="reveal">Isla<br>Stiven</h1>
+    <p class="role reveal">Mechanical Engineering Student <span>· University of Victoria</span></p>
+  </div>
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section-line">
+  <div class="wrap">
+    <p class="eyebrow reveal"><b>01</b> / About</p>
+    <div class="about-grid">
+      <div class="about-prose reveal">
+        <h2 class="head">About</h2>
+        <p>Welcome, I hope you enjoy exploring my work! I am a motivated, thorough, and detail-oriented mechanical engineering student with 12 months of hands-on co-op experience spanning mechanical design, mechatronics, instrumentation, and software.</p>
+
+        <div class="tools">
+          <span class="chip">SolidWorks</span>
+          <span class="chip">Siemens NX</span>
+          <span class="chip">FEA</span>
+          <span class="chip">CFD</span>
+          <span class="chip">Design for Manufacturing</span>
+          <span class="chip">Rapid Prototyping</span>
+          <span class="chip">PCB Design</span>
+          <span class="chip">LabVIEW</span>
+          <span class="chip">MATLAB</span>
+          <span class="chip">Python</span>
+          <span class="chip">C++</span>
+          <span class="chip">GD&amp;T</span>
+        </div>
+      </div>
+
+      <!-- title block / spec sheet -->
+      <dl class="titleblock reveal">
+        <div class="tb-top"><span>Spec Sheet</span><b>REV A</b></div>
+        <div class="tb-row"><dt>Discipline</dt><dd>Mechanical</dd></div>
+        <div class="tb-row"><dt>Institution</dt><dd>University of Victoria</dd></div>
+        <div class="tb-row"><dt>Degree</dt><dd>B.Eng, Mechanical</dd></div>
+        <div class="tb-row"><dt>Graduation</dt><dd>December 2026</dd></div>
+        <div class="tb-row"><dt>GPA</dt><dd>3.7</dd></div>
+        <div class="tb-row"><dt>Location</dt><dd>Victoria, BC</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<!--
+  HOW TO EDIT THIS SECTION:
+  • Each role is one <article class="exp"> block. Copy/paste a whole block to add another.
+  • Everywhere you see [square brackets] or an "EDIT" comment, replace with your own text.
+  • For photos: drop your image file into the same repo folder as this file, then set
+    the <img> src to its filename (e.g. src="coop-lockheed.jpg"). Add more <img> tags
+    inside .exp-media to stack extra photos. Until a file exists, a placeholder box shows.
+  • Keep bullets outcome-first: what you did + a number (%, kg, hrs, $, etc.).
+-->
+<section id="experience" class="section-line">
+  <div class="wrap">
+    <p class="eyebrow reveal"><b>02</b> / Experience</p>
+    <h2 class="head reveal">Co-op Experience</h2>
+
+    <div class="exp-list">
+
+      <!-- ========== ENTRY E-01 · ARTMS (Mech/Mechatronics) ========== -->
+      <article class="exp reveal">
+        <div class="exp-media">
+          <!-- EDIT: add your ARTMS photo to the repo, then set src to its filename -->
+          <img class="exp-photo" src="coop-artms.jpg" alt="Isla's mechanical/mechatronics work at ARTMS">
+          <!-- EDIT: short caption, or delete this line -->
+          <p class="exp-caption">Add a one-line caption.</p>
+        </div>
+
+        <div class="exp-body">
+          <div class="exp-top">
+            <span class="exp-idx">E-01 · ARTMS Inc.</span>
+            <span class="exp-dates">Jan 2025 – Aug 2025</span>
+          </div>
+          <h3 class="exp-role">Mechanical / Mechatronics Engineering Intern</h3>
+          <p class="exp-org">Medical radioisotope production systems for cyclotrons · Burnaby, BC</p>
+
+          <p class="exp-summary">Over eight months I designed and tested hardware for systems that produce medical radioisotopes on cyclotrons. My work spanned a fully sealed device for measuring internal temperatures during irradiation, a PCB for the nickel-electroplating unit, and experiments that improved cooling flow and production time — plus assembling and integrating major subsystems of the GEN2 production platform deployed at international sites.</p>
+
+          <div class="tools">
+            <span class="chip">Mechanical Design</span>
+            <span class="chip">GD&amp;T</span>
+            <span class="chip">PCB Design</span>
+            <span class="chip">Instrumentation</span>
+            <span class="chip">Hardware Testing</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- ========== ENTRY E-02 · SEGAL Lab (Software) ========== -->
+      <article class="exp reveal">
+        <div class="exp-media">
+          <!-- EDIT: add your SEGAL / app photo to the repo, then set src to its filename -->
+          <img class="exp-photo" src="coop-segal.jpg" alt="Educational app prototype built at UVic SEGAL Lab">
+          <!-- EDIT: short caption, or delete this line -->
+          <p class="exp-caption">Add a one-line caption.</p>
+        </div>
+
+        <div class="exp-body">
+          <div class="exp-top">
+            <span class="exp-idx">E-02 · UVic SEGAL Lab</span>
+            <span class="exp-dates">Sep 2023 – Dec 2023</span>
+          </div>
+          <h3 class="exp-role">Software Engineering Intern</h3>
+          <p class="exp-org">Educational technology for remote and Indigenous communities · Victoria, BC</p>
+
+          <p class="exp-summary">As part of a four-person team, I helped architect and build a cross-platform educational app in Flutter/Dart, delivering a working MVP aimed at teachers in remote communities. The project was featured in a CBC interview and earned an invitation to the AISES National Conference.</p>
+
+          <div class="tools">
+            <span class="chip">Flutter</span>
+            <span class="chip">Dart</span>
+            <span class="chip">iOS / Android</span>
+            <span class="chip">Rapid Prototyping</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- ========== ENTRY E-03 · Club Involvement & Volunteer ========== -->
+      <article class="exp reveal">
+        <div class="exp-media">
+          <!-- EDIT: add a photo (e.g. the FSAE car or Victoria Hand Project) and set src -->
+          <img class="exp-photo" src="involvement.jpg" alt="Club and volunteer engineering work">
+          <!-- EDIT: short caption, or delete this line -->
+          <p class="exp-caption">Add a one-line caption.</p>
+        </div>
+
+        <div class="exp-body">
+          <div class="exp-top">
+            <span class="exp-idx">E-03 · Clubs &amp; Volunteer</span>
+            <span class="exp-dates">2023 – Present</span>
+          </div>
+          <h3 class="exp-role">Club Involvement &amp; Volunteer Work</h3>
+          <p class="exp-org">University of Victoria · Victoria, BC</p>
+
+          <ul class="exp-bullets">
+            <li><strong>UVic Formula Racing</strong> (Sep 2024 – Present) — Suspension &amp; accumulator team member on the 2026 EV car: designed CNC-machinable aluminum A-arm nodes at 64–70% mass reduction, and CFD-driven internal cooling ducts, baffles, and fans for the accumulator.</li>
+            <li><strong>The Victoria Hand Project</strong> (Jan – Sep 2023) — Volunteer prosthetics technician: fabricated and assembled 3D-printed and laser-cut upper-limb prosthetics, and wrote clearer assembly documentation to standardize the build process.</li>
+          </ul>
+
+          <div class="tools">
+            <span class="chip">SolidWorks</span>
+            <span class="chip">FEA</span>
+            <span class="chip">CFD</span>
+            <span class="chip">3D Printing</span>
+            <span class="chip">Laser Cutting</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section-line">
+  <div class="wrap">
+    <p class="eyebrow reveal"><b>03</b> / Projects</p>
+    <h2 class="head reveal">Technical Projects</h2>
+
+    <div class="proj-list">
+      <a class="proj reveal" href="project-wingfoil.html">
+        <span class="proj-idx">P-01</span>
+        <div class="proj-main">
+          <h3>Wing Foil Force Measurement System</h3>
+          <p class="proj-org">Tagmata Materials · 2026</p>
+          <p class="proj-desc">A robust force measurement system to provide quantitative data on wind sport wind performance, combining custom mechanical hardware with a waterproof electronics package for reliable data capture in demanding on-water conditions.</p>
+        </div>
+        <span class="proj-go">View Project →</span>
+      </a>
+
+      <a class="proj reveal" href="project-fsae.html">
+        <span class="proj-idx">P-02</span>
+        <div class="proj-main">
+          <h3>FSAE Suspension A-Arm Nodes</h3>
+          <p class="proj-org">UVic Formula Racing · 2026</p>
+          <p class="proj-desc">Lightweight aluminum suspension components designed with simulation and optimization tools, balancing structural performance with manufacturability for UVic's 2026 EV race car.</p>
+        </div>
+        <span class="proj-go">View Project →</span>
+      </a>
+      
+      <a class="proj reveal" href="project-ctcjchip.html">
+        <span class="proj-idx">P-03</span>
+        <div class="proj-main">
+          <h3>CTC j-Chip Microfluidic Device</h3>
+          <p class="proj-org">UVic · MECH 452 Microfluidics for Biomedical and Energy Applications · 2024</p>
+          <p class="proj-desc">A microfluidic chip prototype designed to isolate circulating tumor cells from blood by size and magnetic labelling, working toward a low-cost, handheld cancer-screening tool receiving a perfect 100% project grade. </p>
+        </div>
+        <span class="proj-go">View Project →</span>
+      </a>
+
+      <a class="proj reveal" href="project-minifridge.html">
+        <span class="proj-idx">P-04</span>
+        <div class="proj-main">
+          <h3>Mini Fridge Optimization Study</h3>
+          <p class="proj-org">UVic · MECH 493 Design of Thermofluid Systems · 2026</p>
+          <p class="proj-desc">A thermo-fluid teardown and modelling study of a 1991 mini fridge, evaluating refrigerant, insulation, and compressor upgrades for efficiency and sustainability resulting in a grade of 94%.</p>
+        </div>
+        <span class="proj-go">View Project →</span>
+      </a>
+      
+     <a class="proj reveal" href="project-gearbox.html">
+        <span class="proj-idx">P-05</span>
+        <div class="proj-main">
+          <h3>CSP Turbine Gearbox</h3>
+          <p class="proj-org">UVic · MECH 360 Design of Mechanical Elements · 2024</p>
+          <p class="proj-desc">A four-stage speed-reduction gearbox for a 30 MW concentrated solar power plant, with gear, shaft, bearing, and fatigue analysis across all stages.</p>
+        </div>
+        <span class="proj-go">View Project →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section-line">
+  <div class="wrap">
+    <p class="eyebrow reveal"><b>04</b> / Contact</p>
+    <div class="contact-grid">
+      <div class="reveal">
+        <h2 class="head">Contact</h2>
+        <p class="contact-lede">Please reach out with any questions or for further discussion! </p>
+      </div>
+      <div class="contact-actions reveal">
+        <a class="btn signal" href="mailto:islastiven@gmail.com">Email Me</a>
+        <!-- Replace # with your LinkedIn URL -->
+        <a class="btn" href="https://www.linkedin.com/in/isla-stiven/">LinkedIn</a>
+        <!-- Add your resume PDF to the repo, then point this at it -->
+        <a class="btn" href="Resume_Isla_Stiven.pdf" target="_blank">Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER: TITLE BLOCK ================= -->
+<footer>
+  <div class="titlegrid">
+    <div class="tg"><span class="k">Drawn By</span><span class="v sig">Isla Stiven</span></div>
+    <div class="tg"><span class="k">Title</span><span class="v">Portfolio</span></div>
+    <div class="tg"><span class="k">Location</span><span class="v">Victoria, BC</span></div>
+    <div class="tg"><span class="k">Date</span><span class="v">2026</span></div>
+    <div class="tg"><span class="k">Sheet</span><span class="v">01 / 01</span></div>
+    <div class="tg"><span class="k">Rev</span><span class="v">A</span></div>
+  </div>
+  <div class="footnote">© 2026 Isla Stiven - Mechanical Engineering</div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = Math.min(i * 60, 300) + 'ms';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
