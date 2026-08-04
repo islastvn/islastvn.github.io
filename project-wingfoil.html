@@ -142,12 +142,12 @@
 
       <section>
         <h4>Analysis &amp; Validation</h4>
-        <p>The structure was simulated under a worst-case gust load to ensure reliability and safety. The structure was also simulated in various winging conditions discussed with the client.</p>
+        <p>The assembly was analyzed under a worst-case gust load of 450 N, derived from lift calculations on the wing in a high-gust scenario, ensuring the structure carries the highest expected aerodynamic loads with margin. Under the worst-case gust load, all components remained below their respective yield strengths, confirming the assembly carries the highest expected aerodynamic loads without failure. The analysis also confirmed the dowel pins were functioning as intended: they did not carry any of the axial load, leaving the load path through the load cell intact, while reducing bending stress on the load cell by reacting off-axis loads that would otherwise be transferred to it.</p>
         <figure class="figframe">
           <img src="fea_compare.png" alt="Example FEAs to confirm dowel pin function. With dowel pins (right), and without dowel pins (left).">
           <figcaption>Example FEAs to confirm dowel pin function. With dowel pins (right), and without dowel pins (left).</figcaption>
         </figure>
-        <p>o confirm the sealed electronics package wouldn't overheat during operation, we ran a steady-state thermal finite element analysis of the full internal assembly. We used deliberately conservative boundary conditions: a 30 °C ambient temperature and a 40 °C inner-tube temperature, so the model would represent a worst-case thermal environment rather than a typical one. Solving to steady state shows the equilibrium temperatures each component settles at under continuous load, which is the condition that matters for a device meant to run for extended periods.
+        <p>To confirm the sealed electronics package wouldn't overheat during operation, we ran a steady-state thermal finite element analysis of the full internal assembly. We used deliberately conservative boundary conditions: a 30 °C ambient temperature and a 40 °C inner-tube temperature, so the model would represent a worst-case thermal environment rather than a typical one. Solving to steady state shows the equilibrium temperatures each component settles at under continuous load, which is the condition that matters for a device meant to run for extended periods.
 
 The analysis identified the SD card LDO regulator as the hottest component at 63.2 °C. Mapping the full temperature distribution let us confirm that even the worst-case hot spot stayed within the component's rated operating range, and pinpoint exactly where to focus if further thermal margin were ever needed.</p>
         <figure class="figframe">
