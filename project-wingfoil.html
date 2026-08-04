@@ -240,7 +240,7 @@
       <section>
         <h4>Waterproof Boom Seal</h4>
         <p>The electronics live sealed inside the carbon fiber boom, so the end caps had to be <strong>fully waterproof</strong> and <strong>corrosion-resistant</strong> for repeated saltwater use. The end cap design uses a <strong>ferrule-compression seal</strong>: a <strong>sleeve</strong> slides onto the boom, then a <strong>ferrule</strong>, then a <strong>threaded cap</strong> carrying an <strong>O-ring</strong> seated in a groove. The end cap, sleeve, and ferrule are all machined <strong>delrin</strong>, for easy machining and corrosion resistance.</strong></p>
-        <figure class="figframe">
+        <figure class="figframe"style="max-width:420px;">
           <img src="endcapsdia.png" alt="Exploded CAD view of the end cap seal: cap, O-ring, ferrule, sleeve, and carbon fiber boom">
           <figcaption>Exploded view of the end-cap seal: cap, O-ring, ferrule, sleeve, and carbon fiber boom.</figcaption>
         </figure>
@@ -287,7 +287,7 @@
         </figure>
         <p>To confirm the sealed electronics package wouldn't overheat during operation, we ran a <strong>steady-state thermal finite element analysis</strong> of the full internal assembly. We used deliberately conservative boundary conditions: a <strong>30 °C ambient temperature</strong> and a <strong>40 °C inner-tube temperature</strong>, so the model would represent a worst-case thermal environment rather than a typical one. Solving to steady state shows the equilibrium temperatures each component settles at under continuous load, which is the condition that matters for a device meant to run for extended periods.</p>
         <p>The analysis identified the <strong>SD card LDO regulator</strong> as the hottest component at <strong>63.2 °C</strong>. Mapping the full temperature distribution let us confirm that even the worst-case hot spot stayed within the component's rated operating range, and pinpoint exactly where to focus if further thermal margin were ever needed.</p>
-        <figure class="figframe">
+        <figure class="figframe"style="max-width:420px;">
           <img src="thermal_feas.png" alt="Steady-state thermal analysis results.">
           <figcaption>Steady-state thermal analysis results.</figcaption>
         </figure>
