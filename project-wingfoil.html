@@ -142,10 +142,17 @@
 
       <section>
         <h4>Analysis &amp; Validation</h4>
-        <p>The structure was simulated under a worst-case gust load to ensure reliability and safety. Power and error budgets were created alongside an FMEA / HARA risk analysis. The seal was validated with O-ring squeeze, gland-fill, and sealing-pressure-margin calculations to define a safe operating envelope for depth and pressure.</p>
+        <p>The structure was simulated under a worst-case gust load to ensure reliability and safety. The structure was also simulated in various winging conditions discussed with the client.</p>
         <figure class="figframe">
           <img src="fea_compare.png" alt="Example FEAs to confirm dowel pin function. With dowel pins (right), and without dowel pins (left).">
           <figcaption>Example FEAs to confirm dowel pin function. With dowel pins (right), and without dowel pins (left).</figcaption>
+        </figure>
+        <p>o confirm the sealed electronics package wouldn't overheat during operation, we ran a steady-state thermal finite element analysis of the full internal assembly. We used deliberately conservative boundary conditions: a 30 °C ambient temperature and a 40 °C inner-tube temperature, so the model would represent a worst-case thermal environment rather than a typical one. Solving to steady state shows the equilibrium temperatures each component settles at under continuous load, which is the condition that matters for a device meant to run for extended periods.
+
+The analysis identified the SD card LDO regulator as the hottest component at 63.2 °C. Mapping the full temperature distribution let us confirm that even the worst-case hot spot stayed within the component's rated operating range, and pinpoint exactly where to focus if further thermal margin were ever needed.</p>
+        <figure class="figframe">
+          <img src="thermal_feas.png" alt="Steady-state thermal analysis results.">
+          <figcaption>Steady-state thermal analysis results.</figcaption>
         </figure>
       </section>
 
