@@ -154,22 +154,21 @@
         <h4>Overview</h4>
         <p>A robust, fully sealed force-sensing system for R&D, currently in the build and test phase. Wing makers have had no quantitative way to measure the handle forces a rider generates, the same forces that directly drive wing performance. The goal was to design, build, and validate a system that logs front- and rear-hand loads during live saltwater sessions while staying accurate, waterproof, and true to the riding experience.</p>
 
-        <!-- ===== SPECS SUMMARY. Replace any [EDIT ...] with your real value, or delete that row. ===== -->
         <dl class="specsheet">
           <div class="ss-top"><span>System Specifications</span><b>P-01</b></div>
           <div class="ss-grid">
             <div class="ss-row"><dt>Waterproofing</dt><dd>IP67 sealed enclosure &middot; corrosion-resistant for saltwater use</dd></div>
-            <div class="ss-row"><dt>Run Time</dt><dd>[EDIT: e.g. ~X hrs continuous logging]</dd></div>
+            <div class="ss-row"><dt>Run Time</dt><dd>12 hours continuous use</dd></div>
             <div class="ss-row"><dt>Force Sensing</dt><dd>2&times; inline load cells (independent front / rear hand)</dd></div>
-            <div class="ss-row"><dt>Load Range</dt><dd>[EDIT: e.g. 0&ndash;X N per hand]</dd></div>
+            <div class="ss-row"><dt>Load Range</dt><dd>Calibrated up to 70 N per hand</dd></div>
             <div class="ss-row"><dt>Orientation</dt><dd>9-DOF IMU</dd></div>
-            <div class="ss-row"><dt>Sample Rate</dt><dd>[EDIT: e.g. 50 Hz, synchronized]</dd></div>
+            <div class="ss-row"><dt>Sample Rate</dt><dd>50 Hz, synchronized</dd></div>
             <div class="ss-row"><dt>Electronics</dt><dd>ESP32-S3 MCU &middot; dual 24-bit ADCs &middot; 4 isolated power rails</dd></div>
             <div class="ss-row"><dt>Power</dt><dd>2&times; LiPo (2P1S) &middot; onboard charging</dd></div>
             <div class="ss-row"><dt>Data Output</dt><dd>Time-synchronized CSV &middot; force + orientation</dd></div>
             <div class="ss-row"><dt>Logging</dt><dd>Onboard SD card &middot; status LED</dd></div>
             <div class="ss-row"><dt>Structure</dt><dd>1.2 m carbon fiber boom &middot; ferrule-compression sealed end caps</dd></div>
-            <div class="ss-row"><dt>Total Mass</dt><dd>[EDIT: e.g. X g]</dd></div>
+            <div class="ss-row"><dt>Total Mass</dt><dd>1.46 kg</dd></div>
           </div>
         </dl>
 
@@ -207,7 +206,7 @@
         <p>Electronics are stored inside the boom. The housing covers the whole <strong>1.2m length</strong> of the boom, as is rotation locked with an <strong>epoxied key</strong> on the inner boom surface. The housing is divided into an <strong>access side</strong> and a <strong>maintenance side</strong>. The idea is that the user can undo the front end cap and either start data-logging, access the SD card, or charge the device. This access side also has a <strong>status LED</strong> which indicates data-logging. The 2 LiPo batteries are other close to this side to maintain close proximity to the charger. The batteries are in the <strong>2P1S configuration</strong> to double the capacity.</p>
         <p>The maintenance side has an <strong>IP67 cable gland</strong> which runs through the back end cap so that the load cells can be wired to their respective <strong>ADCs</strong> inside the boom. The <strong>IMU</strong> and <strong>MCU</strong> are also on this side of the electronic housing. </p>
         <figure class="figframe">
-          <img src="electronics_Cad.png" alt="Electronics CAD">
+          <img src="electronics_cad.png" alt="Electronics CAD">
           <figcaption>Electronics CAD.</figcaption>
         </figure>
         <figure class="figframe">
