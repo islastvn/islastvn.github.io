@@ -119,10 +119,10 @@
       <section>
         <h4>Load Simulation</h4>
         <ul>
-          <li>Built a vehicle model in Dynatune from the car's mass, CG height, track, and wheelbase to predict the loads reaching each suspension corner.</li>
-          <li>Ran the dynamic events that govern a Formula Student car: maximum braking, peak lateral cornering, and acceleration, plus combined cases such as braking while cornering.</li>
+          <li>Used a vehicle model in Dynatune from the car's mass, CG height, track, and wheelbase to predict the loads reaching each suspension corner.</li>
+          <li>Computed link loads for 12 combined load cases, including static, vertical bump, acceleration/regeneration, braking, cornering, and all relevant combinations using the Dynatune vehicle load case analysis tool.</li>
           <li>Extracted the tension and compression forces carried by each A-arm member in every case, since the members act as two-force members in the suspension.</li>
-          <li>Took the worst-case (governing) load for each of the four nodes forward as the input to the hand calculations and FEA.</li>
+          <li>Took the worst-case (governing) load for each of the four nodes forward as the input to the hand calculations and FEAs.</li>
         </ul>
       </section>
 
@@ -131,16 +131,17 @@
         <ul>
           <li>Sized the adhesive bond length between each node and its carbon tube from a tear-out (adhesive shear) calculation at a safety factor of 4, reflecting the larger uncertainty in bond strength.</li>
           <li>Sized the carbon-fibre tube diameter from a maximum-axial-stress calculation at a safety factor of 2.5.</li>
-          <li>Used these results to set the baseline node geometry before any material was optimized away.</li>
+          <li>Verified that the selected tube geometry would not buckle under the worst-case compression.</li>
+          <li>Used these results to set the baseline node geometry before any material was removed.</li>
         </ul>
       </section>
 
       <section>
         <h4>FEA &amp; Mesh Convergence</h4>
         <ul>
-          <li>Modelled all four nodes in SolidWorks and ran a mesh-convergence study to select a mesh size that gave stable stress results.</li>
+          <li>Modelled all four nodes based on suspension geometry and other constraints (swivel-joint, c-clip) in SolidWorks and ran a mesh-convergence study to select a mesh size that gave stable stress results.</li>
           <li>Applied one consistent mesh across every node so results stayed comparable between iterations and between different node designs.</li>
-          <li>Loaded each node with its governing load case to map the areas of maximum and minimum stress and locate the lowest factor-of-safety regions.</li>
+          <li>Loaded each node with its governing load case to map the areas of high stress and locate the lowest factor-of-safety regions.</li>
         </ul>
         <figure class="figframe">
           <img src="feaexample.png" alt="FEA Simulation Example with Factor of Safety Plot">
@@ -156,6 +157,10 @@
           <li>Combined the topology map with the FEA stress results to decide where material actually came off: central pockets through the body, holes through the legs, reduced body height, and relieved back faces, all kept well below yield.</li>
           <li>Added fillets and chamfers at internal transitions to control stress concentrations and avoid small-radius end mills.</li>
         </ul>
+        <figure class="figframe">
+          <img src="all_four_nodes.png" alt="All four optimized nodes">
+          <figcaption>All four optimized suspension nodes. From left to right: Front upper node, rear upper node, front lower node, rear lower node.</figcaption>
+        </figure>
       </section>
 
       <section>
@@ -166,15 +171,6 @@
           <li>Cut 64 to 70 percent of the mass per node versus the steel a-arms, for a total reduction of 1,058 g, in CNC-machinable parts bonded to carbon-fibre tubes.</li>
         </ul>
         <figure class="figframe">
-          <img src="all_four_nodes.png" alt="All four optimized nodes">
-          <figcaption>All four optimized suspension nodes. From left to right: Front upper node, rear upper node, front lower node, rear lower node.</figcaption>
-        </figure>
-      </section>
-
-      <section>
-        <h4>Focus</h4>
-        <p>Structural design, simulation-driven optimization, technical documentation, and manufacturability for a competitive motorsport application.</p>
-        <figure class="figframe">
           <img src="machinednode.png" alt="Front Upper A-arm Node Machined">
           <figcaption>The finished front-upper node and rear-upper node after CNC machining.</figcaption>
         </figure>
@@ -182,6 +178,11 @@
           <img src="assemblednodes.png" alt="Aluminum A-Arm Node + Carbon Fiber Tube Assembly">
           <figcaption>Aluminum node bonded to a carbon fiber tube in the assembled A-arm.</figcaption>
         </figure>
+      </section>
+
+      <section>
+        <h4>Focus</h4>
+        <p>Structural design, simulation-driven optimization, technical documentation, and manufacturability for a competitive motorsport application.</p>
       </section>
 
     </div>
