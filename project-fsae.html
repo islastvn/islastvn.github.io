@@ -108,7 +108,8 @@
 
       <section>
         <h4>Overview</h4>
-        <p>Design of lightweight aluminum suspension A-arm nodes for the University of Victoria Formula Racing EV, the machined joints that bond the suspension arms to their carbon fiber tubes. The carbon-and-aluminum design cuts roughly 3 kg of unsprung mass and lowers the car's yaw moment of inertia, both of which directly sharpen handling. The goal was to make each node as light as possible while still meeting the suspension's kinematic geometry, carrying the on-track loads at an appropriate safety factor, and remaining CNC-machinable</p>
+        <li>The UVic Formula Racing EV originally used welded 4130 steel a-arms in its double-wishbone push-pull rod suspension: simple and strong, but heavy at over 1.5 kg. This project replaced them with machined aluminum nodes bonded to carbon-fibre tubes, cutting 1,058 g while holding the suspension's kinematics and a 1.2 safety factor. Because the a-arms are unsprung corner mass, that saving lowers unsprung mass and the car's yaw moment of inertia, which directly sharpens handling.</li>
+        <li> I started from the existing suspension geometry and did hand calculations, then used load simulations and FEA to model the on-track forces through each node. From there I ran topology optimization to strip away material wherever the structure allowed, selecting aluminum grades to match the strength each node needed while keeping every part CNC-machinable. The sections below walk through the calculations, simulations, and final design in detail.</li>
         <figure class="figframe">
           <img src="nodecad.png" alt="Front-Upper A-Arm Node">
           <figcaption>CAD of the front-upper A-arm node.</figcaption>
