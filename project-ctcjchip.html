@@ -121,7 +121,7 @@
 
       <section>
         <h4>How It Works</h4>
-        <p>The device isolates CTCs in three stages on a single chip, feeding blood and a buffer solution in at the top and collecting an enriched sample at the bottom. The separation exploits two differences between CTCs and the surrounding blood: CTCs are relatively large (typically 12 to 18 &micro;m, rarely below 5 &micro;m, against 6 to 8 &micro;m for red blood cells), and they are CD45-negative while white blood cells are CD45-positive.</p>
+        <p>The device isolates CTCs in three stages on a single chip, feeding blood and a buffer solution in at the top and collecting an enriched sample at the bottom. The separation exploits two differences between CTCs and the surrounding blood: CTCs are relatively large (typically 12 to 18 &micro;m, against 6 to 8 &micro;m for red blood cells), and they are CD45-negative while white blood cells are CD45-positive.</p>
         <figure class="figframe">
           <img src="isolatedctcs.png" alt="Labeled CAD of the CTC j-Chip showing the DLD region, inertial focusing region, magnets, and where isolated CTCs collect.">
           <figcaption>Labeled CAD of the j-Chip: DLD region, inertial focusing region, magnets, and the isolated-CTC outlet.</figcaption>
@@ -140,7 +140,7 @@
         <ul>
           <li>Set the DLD critical diameter to 4 &micro;m, so CTCs and white blood cells bump aside while red blood cells and platelets follow the flow to waste.</li>
           <li>Sized the DLD channel length from the deflection angle, Length = Width / tan(1.7&deg;), so bumped cells fully traverse the channel before the outlet.</li>
-          <li>Took the micro-post size and spacing from the Karabacak reference geometry, the same study the 4 &micro;m critical diameter is drawn from.</li>
+          <li>Took the micro-post size and spacing from a reference study's geometry, the same study the 5 &micro;m critical diameter is drawn from.</li>
           <li>Shaped the inertial-focusing region as a serpentine channel that alternates cross-section at a 2:1 ratio to drive the particle interaction needed for bead attachment.</li>
         </ul>
         <figure class="figframe">
@@ -173,7 +173,6 @@
           <li>Fabricate the micro-post array at true feature size on a higher-resolution SLA process or in silicon, then validate the size-based DLD sort directly.</li>
           <li>Redesign the inertial-focusing region to fit larger rectangular magnets on opposite walls, since the current layout limits magnet size and therefore field strength.</li>
           <li>Integrate the impedance sensor for on-chip electrical counting, removing the reliance on external lab equipment.</li>
-          <li>Benchmark toward the performance of comparable published devices, which reach roughly 97% CTC yield, as the target for a full build.</li>
         </ul>
       </section>
 
