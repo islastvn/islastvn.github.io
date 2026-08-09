@@ -287,10 +287,9 @@
        <p>Before committing to the build, I sized by hand the three things most likely to fail or limit the design: the boom structure, the end-cap seal, and the electronics thermals.</p>
        <ul>
        <li><strong>Boom bending: 53.8 MPa against a ~600 MPa flexural strength.</strong> Modelled the boom as a simply supported beam with the rider's hands as third-point loads, sized to a worst-case gust of ~349 N total from the lift equation. The wide margin showed the boom was not the critical part, which pointed the design and the later FEA at the load-cell brackets and clamp interfaces instead.</li>
-       <li><strong>End-cap seal: ~258 psi at the seal face, within limits.</strong> The machined Delrin cap, sleeve, and ferrule trap a -124 O-ring at 1.86% stretch and 27.9% squeeze, turning ~107 lbf of ferrule force into radial contact pressure on the tube. Retention was then confirmed physically: the assembled cap could not be pulled off the roughened tube.</li>
-       <li><strong>Power dissipation: ~0.35 W against 0.43 W and 0.71 W allowable.</strong> Checked both LDOs (TC1262 and MCP1700) at maximum current inside the sealed housing at a 60&deg;C ambient, confirming no thermal risk.</li>
+       <li><strong>End-cap seal: ~258 psi at the seal face, within limits.</strong> The machined Delrin cap, sleeve, and ferrule trap a -124 O-ring at 1.86% stretch and 27.9% squeeze, turning ~107 lbf of ferrule force into radial contact pressure on the tube. More importantly, retention was confirmed physically: the assembled cap could not be pulled off the roughened tube (by the many people who attempted it).</li>
+       <li><strong>Power dissipation: ~0.35 W against 0.43 W and 0.71 W allowable.</strong> Checked both LDOs (TC1262 and MCP1700) at maximum current inside the sealed housing at a conservative 60&deg;C ambient, confirming no thermal risk.</li>
        </ul>
-       <p>An FEA on the handle assembly then followed up the bending result, checking off-axis loading on the load cell and confirming that the locating pins keep the cell from bending.</p>
      </section>
 
       <section>
