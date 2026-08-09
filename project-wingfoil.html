@@ -282,6 +282,17 @@
         </figure>
       </section>
 
+     <section>
+       <h4>Engineering Analysis</h4>
+       <p>Before committing to the build, I sized by hand the three things most likely to fail or limit the design: the boom structure, the end-cap seal, and the electronics thermals.</p>
+       <ul>
+       <li><strong>Boom bending.</strong> Modelled the carbon-fibre boom as a simply supported beam, with the wing clamps as supports and the rider's two hands as point loads at the third-points of the span. The aerodynamic driving force was estimated from the lift equation across wind conditions, taking a worst-case gust of about 349 N total (roughly 175 N per hand). That gives a maximum moment of 56.4 N&middot;m and a peak bending stress of 53.8 MPa against roughly 600 MPa flexural strength, a strain under 0.1%. The boom is nowhere near critical, which pointed the design and the later FEA at the load-cell brackets and clamp interfaces instead.</li>
+       <li><strong>End-cap seal.</strong> Validated the machined Delrin cap, sleeve, and ferrule seal on a -124 O-ring: 1.86% stretch (inside the 5% limit) and 27.9% axial squeeze, giving about 107 lbf of ferrule force from the Parker squeeze data and roughly 258 psi of bearing pressure at the seal face as a conservative lower bound on contact stress. Retention was then confirmed physically, since the assembled cap could not be pulled off the roughened tube.</li>
+       <li><strong>Power dissipation.</strong> Checked both LDOs (TC1262 and MCP1700) at maximum current inside the sealed housing: about 0.35 W dissipated against 0.43 W and 0.71 W allowable at a 60&deg;C boom ambient, confirming no thermal risk.</li>
+       </ul>
+       <p>An FEA on the handle assembly then followed up the bending result, checking off-axis loading on the load cell and confirming that the locating pins keep the cell from bending.</p>
+     </section>
+
       <section>
         <h4>Analysis &amp; Validation</h4>
         <p>The assembly was analyzed under a <strong>worst-case gust load of 450 N</strong>, derived from lift calculations on the wing in a high-gust scenario. Under this load, <strong>all components remained below their respective yield strengths</strong>, confirming the structure carries the highest expected aerodynamic loads without failure. The analysis also confirmed the <strong>dowel pins</strong> were functioning as intended: they did not carry any of the axial load, leaving the load path through the load cell intact, while <strong>reducing bending stress on the load cell</strong> by reacting off-axis loads that would otherwise be transferred to it. The assembly was also simulated in several other load cases provided by the client to confirm it performed as expected in a full range of riding conditions.</p>
