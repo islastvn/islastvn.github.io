@@ -222,7 +222,7 @@
           </div>
         </dl>
 
-        <figure class="figframe"style="max-width:400px;">
+        <figure class="figframe"style="max-width:450px;">
           <img src="wing.png" alt="CAD of wing foil wing + force measurement handle">
           <figcaption>CAD of the wing and the integrated force-measurement handle.</figcaption>
         </figure>
@@ -231,7 +231,7 @@
       <section>
         <h4>Mounting &amp; Force Measurement</h4>
         <p>The rider's hands act on a <strong>carbon fiber auxiliary boom</strong> that doubles as the handle and electronics housing. A custom-designed <strong>wing attachment</strong> lets the measurement handle swap in for the original wing boom, making the test system <strong>non-invasive</strong> and easy to remove. <strong>Two inline load cells</strong>, one front and one rear, capture each hand's force independently throughout the session. <strong>Dowel pins</strong> were designed to prevent any bending of the load cells.</p>
-        <figure class="figframe"style="max-width:400px;">
+        <figure class="figframe"style="max-width:450px;">
           <img src="load_cell_mounting.png" alt="Labeled CAD of the mounting assembly: boom, clamp, boom bracket, load cell, pins, and straps on the wing">
           <figcaption>Mounting assembly: boom, clamp, boom bracket, inline load cell, dowel pins, and wing straps.</figcaption>
         </figure>
@@ -240,12 +240,12 @@
       <section>
         <h4>Waterproof Boom Seal</h4>
         <p>The electronics live sealed inside the carbon fiber boom, so the end caps had to be <strong>fully waterproof</strong> and <strong>corrosion-resistant</strong> for repeated saltwater use. The end cap design uses a <strong>ferrule-compression seal</strong>: a <strong>sleeve</strong> slides onto the boom, then a <strong>ferrule</strong>, then a <strong>threaded cap</strong> carrying an <strong>O-ring</strong> seated in a groove. The end cap, sleeve, and ferrule are all machined <strong>delrin</strong>, for easy machining and corrosion resistance.</strong></p>
-        <figure class="figframe"style="max-width:400px;">
+        <figure class="figframe"style="max-width:450px;">
           <img src="endcapsdia.png" alt="Exploded CAD view of the end cap seal: cap, O-ring, ferrule, sleeve, and carbon fiber boom">
           <figcaption>Exploded view of the end-cap seal: cap, O-ring, ferrule, sleeve, and carbon fiber boom.</figcaption>
         </figure>
         <p>Threading the cap down compresses the ferrule between the cap and sleeve, converting that make-up force into <strong>axial compression on the O-ring</strong>, energizing it against the groove and tube to form the seal. <strong>Roughening the boom's outer surface</strong> on the lathe measurably improved grip and seal reliability. The machined caps below include a <strong>two-wire cable gland</strong> for the load cell leads.</p>
-        <figure class="figframe"style="max-width:400px;">
+        <figure class="figframe"style="max-width:450px;">
           <img src="end_caps.png" alt="Finished machined end caps with O-rings and a sealed cable gland">
           <figcaption>I machined end cap components on the manual lathe and CNC mill (left). End cap assembly, including cable gland with 2x3mm wire adapter for load cells (right).</figcaption>
         </figure>
@@ -255,15 +255,15 @@
         <h4>Electronics</h4>
         <p>Electronics are stored inside the boom. The housing covers the whole <strong>1.2m length</strong> of the boom, as is rotation locked with an <strong>epoxied key</strong> on the inner boom surface. The housing is divided into an <strong>access side</strong> and a <strong>maintenance side</strong>. The idea is that the user can undo the front end cap and either start data-logging, access the SD card, or charge the device. This access side also has a <strong>status LED</strong> which indicates data-logging. The 2 LiPo batteries are close to this side to maintain proximity to the charger. The batteries are in the <strong>2P1S configuration</strong> to double the capacity.</p>
         <p>The maintenance side has an <strong>IP67 cable gland</strong> which runs through the back end cap so that the load cells can be wired to their respective <strong>ADCs</strong> inside the boom. The <strong>IMU</strong> and <strong>MCU</strong> are also on this side of the electronics housing. </p>
-        <figure class="figframe"style="max-width:400px;">
+        <figure class="figframe"style="max-width:450px;">
           <img src="electronics_cad.png" alt="Electronics CAD">
           <figcaption>Electronics CAD.</figcaption>
         </figure>
-        <figure class="figframe"style="max-width:400px;">
+        <figure class="figframe"style="max-width:450px;">
           <img src="electronics_built.png" alt="Assembled electronics housing">
           <figcaption>Assembled electronics housing.</figcaption>
         </figure>
-        <figure class="figframe"style="max-width:400px;">
+        <figure class="figframe"style="max-width:450px;">
           <img src="electronics_inboom.jpeg" alt="Electronics in the boom">
           <figcaption>Electronics in the boom.</figcaption>
         </figure>
@@ -272,11 +272,11 @@
       <section>
         <h4>System Design, Power Distribution, and Data Logging</h4>
         <p>Inside the sealed boom, an <strong>ESP32-S3 microcontroller</strong> reads the load cells through <strong>dual 24-bit ADCs</strong>, alongside a <strong>9-DOF IMU</strong> for orientation tracking. The package runs off <strong>four isolated power rails</strong> and a LiPo pack, and logs <strong>synchronized force and orientation data</strong> to an SD card for post-session analysis.</p>
-        <figure class="figframe"style="max-width:400px;">
+        <figure class="figframe"style="max-width:450px;">
           <img src="system_block_diagram.png" alt="System block diagram">
           <figcaption>System block diagram.</figcaption>
         </figure>
-        <figure class="figframe"style="max-width:400px;">
+        <figure class="figframe"style="max-width:450px;">
           <img src="power_distribution_diagram.png" alt="Power distribution diagram">
           <figcaption>Power distribution diagram.</figcaption>
         </figure>
@@ -301,7 +301,7 @@
         </figure>
         <p>To confirm the sealed electronics package wouldn't overheat during operation, we ran a <strong>steady-state thermal finite element analysis</strong> of the full internal assembly. We used deliberately conservative boundary conditions: a <strong>30 °C ambient temperature</strong> and a <strong>40 °C inner-tube temperature</strong>, so the model would represent a worst-case thermal environment rather than a typical one. Solving to steady state shows the equilibrium temperatures each component settles at under continuous load, which is the condition that matters for a device meant to run for extended periods.</p>
         <p>The analysis identified the <strong>SD card LDO regulator</strong> as the hottest component at <strong>63.2 °C</strong>. Mapping the full temperature distribution let us confirm that even the worst-case hot spot stayed within the component's rated operating range, and pinpoint exactly where to focus if further thermal margin were ever needed.</p>
-        <figure class="figframe"style="max-width:400px;">
+        <figure class="figframe"style="max-width:450px;">
           <img src="thermal_feas.png" alt="Steady-state thermal analysis results.">
           <figcaption>Steady-state thermal analysis results.</figcaption>
         </figure>
@@ -310,7 +310,7 @@
       <section>
         <h4>Testing &amp; Validation Results</h4>
         <p>Before validation, each sensor was calibrated against a known reference: the load cells with a dead-weight stack and the IMU against set reference angles. The system was then tested against a set of defined requirements through bench and environmental testing, summarized below.</p>
-        <figure class="figframe"style="max-width:400px;">
+        <figure class="figframe"style="max-width:450px;">
           <img src="calibrating.png" alt="Load cell and IMU calibration set-ups.">
           <figcaption>Load cell and IMU calibration set-ups.</figcaption>
         </figure>
