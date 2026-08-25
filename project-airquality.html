@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Air Quality Monitor | Isla Stiven</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Page-specific readability + figure styling.
+     Once you're happy with this pattern across all project pages,
+     move this whole <style> block into style.css and delete it from each page. -->
+<style>
+  /* Auto-number the sections and give each a clear, scannable header */
+  .detail-body { counter-reset: sec; }
+
+  .detail-body section { margin: 0 0 2.75rem; }
+  .detail-body section:last-child { margin-bottom: 0; }
+
+  .detail-body h4 {
+    counter-increment: sec;
+    font-family: var(--font-mono, "IBM Plex Mono", monospace);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule, #e4e4e4);
+  }
+  .detail-body h4::before {
+    content: counter(sec, decimal-leading-zero) "  /  ";
+    color: var(--signal, #e5533c);
+  }
+
+  /* Comfortable reading measure and rhythm */
+  .detail-body p {
+    line-height: 1.7;
+    max-width: 68ch;
+    margin: 0 0 1rem;
+  }
+  .detail-body p:last-child { margin-bottom: 0; }
+
+  /* Lists read at the same measure as the prose */
+  .detail-body ul {
+    max-width: 68ch;
+    margin: 0 0 1rem;
+    padding-left: 1.2rem;
+  }
+  .detail-body li {
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Nested lists tighten up slightly */
+  .detail-body li ul {
+    margin: 0.5rem 0 0.5rem;
+  }
+
+  /* Lead paragraph of the page reads a touch larger */
+  .detail-body section:first-of-type p:first-of-type {
+    font-size: 1.0rem;
+    color: var(--ink, #1a1a1a);
+  }
+
+  /* Figures: constrained width, centered, with a captioned block */
+  .detail-body .figframe {
+    max-width: 600px;
+    margin: 1.5rem auto 0.6rem;
+  }
+  .detail-body .figframe img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .detail-body figcaption {
+    font-family: var(--font-mono, "IBM Plex Mono", monospace);
+    font-size: 0.72rem;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+    color: var(--muted, #6b6b6b);
+    margin-top: 0.6rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--signal, #e5533c);
+  }
+
+  /* Spec-sheet styling for the sensor breakdown table */
+  .detail-body .table-wrap {
+    max-width: 68ch;
+    margin: 1.5rem 0 0.6rem;
+    overflow-x: auto;
+  }
+  .detail-body .results-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  .detail-body .results-table th {
+    font-family: var(--font-mono, "IBM Plex Mono", monospace);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.66rem;
+    font-weight: 600;
+    text-align: left;
+    color: var(--ink, #1a1a1a);
+    padding: 0.55rem 0.8rem;
+    border-bottom: 2px solid var(--signal, #e5533c);
+    vertical-align: bottom;
+    white-space: nowrap;
+  }
+  .detail-body .results-table th span {
+    display: block;
+    font-weight: 400;
+    color: var(--muted, #6b6b6b);
+    letter-spacing: 0.04em;
+    margin-top: 0.15rem;
+  }
+  .detail-body .results-table td {
+    padding: 0.55rem 0.8rem;
+    border-bottom: 1px solid var(--rule, #e4e4e4);
+    vertical-align: top;
+  }
+  .detail-body .results-table td:first-child { font-weight: 600; white-space: nowrap; }
+  .detail-body .table-note {
+    font-family: var(--font-mono, "IBM Plex Mono", monospace);
+    font-size: 0.72rem;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+    color: var(--muted, #6b6b6b);
+    margin: 0.6rem 0 0;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--signal, #e5533c);
+    max-width: 68ch;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark">IS</span><span class="name">Isla Stiven</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="detail-hero">
+  <div class="wrap">
+    <a class="back" href="index.html#projects">&larr; Back to Projects</a>
+    <p class="org">Personal Project &middot; P-07</p>
+    <h1>Air Quality<br>Monitor</h1>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="detail-grid">
+    <div class="detail-body">
+
+      <section>
+        <h4>Motivation</h4>
+        <p>My parents live in British Columbia's Okanagan Valley, where wildfire smoke has become a heavy part of the summer. During bad smoke events the air outside can be genuinely hazardous, and it is hard to know from inside the house how bad things actually are or whether opening a window is helping or hurting. I wanted to build them a simple device they could glance at to answer that question at a glance.</p>
+        <p>Beyond the practical use, I wanted a project that let me carry something all the way from an idea to a working, tested build across every discipline it touched: sensor selection, electronics integration, embedded code, and a purpose-designed enclosure. It ended up being a satisfying end-to-end build where the mechanical design, the electronics, and the firmware all had to work together to make the readings trustworthy.</p>
+        <ul>
+          <li><b>The problem:</b> during smoke season it is hard to know indoor air quality without a real instrument.</li>
+          <li><b>The goal:</b> a glanceable, always-on monitor that flags when a reading leaves the healthy range, readable by anyone without technical knowledge.</li>
+          <li><b>The scope:</b> a full design-build-test project spanning sensors, embedded firmware, and a custom 3D-printed enclosure.</li>
+        </ul>
+        <figure class="figframe">
+          <img src="aqm_motivation.jpg" alt="Wildfire smoke over the Okanagan Valley / the finished monitor">
+          <figcaption>The finished monitor displaying live readings. Built to give a clear at-a-glance picture of indoor air quality during Okanagan wildfire season.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h4>Sensors Used</h4>
+        <p>The monitor measures the pollutants and conditions that matter most for indoor air quality, using three Adafruit sensor breakouts. All three communicate over a shared I2C bus and chain together with STEMMA QT connectors, which kept the wiring clean and the sensors easy to reposition inside the enclosure.</p>
+        <ul>
+          <li><b>PMSA003I (particulate matter):</b> a laser particle counter with an active fan that measures fine airborne particulate at three size ranges, PM1.0, PM2.5, and PM10. PM2.5 is the key health number during wildfire smoke, so this is the most important sensor for the intended use.</li>
+          <li><b>SCD-41 (CO2, temperature, humidity):</b> a photoacoustic CO2 sensor that also reports temperature and relative humidity. CO2 is the everyday indicator of how well a room is ventilated, and the temperature and humidity data double as inputs to the VOC sensor.</li>
+          <li><b>SGP40 (volatile organic compounds):</b> a metal-oxide gas sensor that outputs a VOC Index, a relative measure of gases from sources like cooking, cleaning products, and off-gassing. It self-calibrates to the room's baseline over time.</li>
+        </ul>
+        <div class="table-wrap">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Sensor</th>
+                <th>Measures</th>
+                <th>Interface</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>PMSA003I</td><td>PM1.0 / PM2.5 / PM10 particulate</td><td>I2C (STEMMA QT)</td></tr>
+              <tr><td>SCD-41</td><td>CO2, temperature, humidity</td><td>I2C (STEMMA QT)</td></tr>
+              <tr><td>SGP40</td><td>VOC Index</td><td>I2C (STEMMA QT)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="figframe">
+          <img src="aqm_sensors.jpg" alt="The three Adafruit sensor breakouts">
+          <figcaption>The three Adafruit sensor breakouts: PMSA003I particulate sensor (with Plantower module), SCD-41 CO2/temp/humidity sensor, and SGP40 VOC sensor.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h4>Electronics Integration &amp; Code Logic</h4>
+        <p>An ESP32 microcontroller runs the whole system. It reads all three sensors over I2C and drives a 2.8 inch colour TFT display over a separate SPI bus, so the two interfaces never conflict. I wrote the firmware in C++ in the Arduino environment, bringing the system up one piece at a time so that any problem had a single, clear cause.</p>
+        <ul>
+          <li><b>Bus architecture:</b> the three sensors share one I2C bus (each at its own address), while the display runs on its own SPI bus. Keeping them separate avoided contention and simplified debugging.</li>
+          <li><b>Sensor fusion:</b> the VOC sensor produces more accurate readings when it is given the current temperature and humidity. The firmware feeds the SCD-41's live temperature and humidity into the SGP40's VOC calculation, so the sensors work together rather than in isolation.</li>
+          <li><b>Timing:</b> the loop is paced to the CO2 sensor's five second measurement cadence, with a retry on the particulate sensor to handle the occasional missed data packet.</li>
+          <li><b>Air quality index:</b> the firmware computes an AQHI-style index from PM2.5, following Environment Canada's wildfire-smoke methodology (which uses PM2.5 alone during smoke events). It is displayed as the headline number with the same colour bands the public sees on official forecasts.</li>
+          <li><b>At-a-glance status:</b> every reading has a coloured status dot (green, yellow, red) driven by health-based thresholds, so an out-of-range value flags itself without the reader needing to interpret the numbers.</li>
+        </ul>
+        <figure class="figframe">
+          <img src="aqm_electronics.jpg" alt="ESP32 wired to the sensor chain and display on a breadboard">
+          <figcaption>The prototype during bring-up: ESP32, the chained sensors, and the TFT display driven from live sensor data.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h4>Housing &amp; Full System</h4>
+        <p>For an air quality monitor, the enclosure is part of the instrument rather than just a cover. A sealed box would starve the sensors of the air they need to sample and would trap heat that biases the temperature and humidity readings, so the housing was designed around airflow and thermal isolation from the start. I modelled it in SolidWorks and designed it for 3D printing.</p>
+        <ul>
+          <li><b>Directed airflow:</b> vents are placed to force a cross-flow through the interior rather than venting every face, which would leave a stagnant dead zone around the sensors. Intake sits low near the particulate sensor's fan, exhaust sits high on the opposite side.</li>
+          <li><b>Thermal isolation:</b> the CO2/temperature/humidity sensor is positioned away from the heat generated by the ESP32 and the display backlight, near an intake, so its temperature and humidity readings stay accurate.</li>
+          <li><b>Design for manufacturing:</b> vents use a grid of small openings that print cleanly without support material, and the enclosure was designed in a material chosen for heat tolerance.</li>
+          <li><b>Serviceability:</b> internal standoffs mount the electronics board, the microcontroller and display are socketed rather than soldered down, and the sensors stay on connectors so any component can be swapped without rebuilding the unit.</li>
+        </ul>
+        <figure class="figframe">
+          <img src="aqm_housing.jpg" alt="SolidWorks model of the enclosure and the assembled full system">
+          <figcaption>The SolidWorks enclosure showing the display cutout and cross-flow venting, designed around the final electronics layout.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h4>Future Improvements</h4>
+        <p>The monitor works as a standalone unit, but there are a few directions I would like to take it next.</p>
+        <ul>
+          <li><b>Wireless connectivity:</b> the ESP32 has WiFi and Bluetooth built in, so no new hardware is needed to add them.
+            <ul>
+              <li>Bluetooth would let the readings be viewed on a phone within the house.</li>
+              <li>WiFi is the more powerful option: it would let me check my parents' air quality remotely from my own home during a smoke event, which is really the underlying goal of the whole project.</li>
+            </ul>
+          </li>
+          <li><b>Housing optimization:</b> validate the airflow design experimentally (smoke-based flow visualization and comparing enclosed versus open-air sensor response), then refine vent sizing and placement based on the results rather than on reasoning alone.</li>
+          <li><b>Outdoor capability:</b> adapt the enclosure for a covered outdoor location.
+            <ul>
+              <li>Rain-shielded or downward-facing vents and a shielded cable entry to keep out wind-driven moisture.</li>
+              <li>A replaceable coarse mesh over the intakes to keep insects and debris off the sensor optics.</li>
+              <li>A condensation drain and a UV-stable, weather-tolerant print material for long-term outdoor service.</li>
+            </ul>
+          </li>
+          <li><b>Expanded sensing:</b> adding an ozone sensor would allow a full Air Quality Health Index rather than the PM2.5-only version, capturing days where air quality is driven by ozone rather than particulate.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Focus</h4>
+        <p>End-to-end design and build: sensor selection and integration, embedded firmware, and airflow-driven enclosure design for a real-world home instrument.</p>
+      </section>
+
+    </div>
+
+    <dl class="titleblock">
+      <div class="tb-top"><span>Details</span><b>P-07</b></div>
+      <div class="tb-row"><dt>Type</dt><dd>Personal Project</dd></div>
+      <div class="tb-row"><dt>Timeframe</dt><dd>2026</dd></div>
+      <div class="tb-row"><dt>Role</dt><dd>Full System Design</dd></div>
+      <div class="tb-row"><dt>Domain</dt><dd>Mechatronics &middot; Enclosure Design</dd></div>
+      <div class="tb-row"><dt>Key Tools</dt><dd>SolidWorks &middot; 3D Printing &middot; ESP32 &middot; C++ &middot; I2C/SPI &middot; Soldering</dd></div>
+    </dl>
+  </div>
+</div>
+
+<footer>
+  <div class="titlegrid">
+    <div class="tg"><span class="k">Drawn By</span><span class="v sig">Isla Stiven</span></div>
+    <div class="tg"><span class="k">Title</span><span class="v">Air Quality Monitor</span></div>
+    <div class="tg"><span class="k">Location</span><span class="v">Victoria, BC</span></div>
+    <div class="tg"><span class="k">Date</span><span class="v">2026</span></div>
+    <div class="tg"><span class="k">Sheet</span><span class="v">P-07</span></div>
+    <div class="tg"><span class="k">Rev</span><span class="v">A</span></div>
+  </div>
+  <div class="footnote">&copy; 2026 Isla Stiven &middot; Mechanical Engineering</div>
+</footer>
+
+</body>
+</html>
