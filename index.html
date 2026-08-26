@@ -69,18 +69,17 @@
   .skills-label::after{ content:""; flex:1; height:1px; background:var(--rule); }
   .about-prose .tools{ margin-top:12px; gap:6px; }
 
-  /* relevant courses — reuses the spec-sheet look */
-  .courseblock{ margin-top:16px; }
-  .courseblock .tb-row{ grid-template-columns:1fr auto; }
-  .courseblock .tb-row dt{
-    font-family:var(--font-body); text-transform:none; letter-spacing:0;
-    font-size:13px; font-weight:500; color:var(--ink);
+  /* relevant courses — plain heading + text, low emphasis */
+  .courses-list{ margin:10px 0 0; }
+  .course{
+    display:flex; justify-content:space-between; gap:16px; align-items:baseline;
+    padding:4px 0;
   }
-  .courseblock .tb-row dd{
-    font-family:var(--font-mono); font-size:12px; color:var(--muted);
-    text-align:right; min-width:56px;
+  .course dt{ font-size:14px; color:var(--ink); }
+  .course dd{
+    margin:0; font-family:var(--font-mono); font-size:12px;
+    color:var(--muted); white-space:nowrap;
   }
-  .courseblock .tb-top b{ color:var(--signal); }
 </style>
 </head>
 <body>
@@ -135,6 +134,18 @@
           <span class="chip">Shop Tools</span>
           <span class="chip">GD&amp;T</span>
         </div>
+
+        <div class="courses">
+          <p class="skills-label">Relevant Courses</p>
+          <dl class="courses-list">
+            <div class="course"><dt>Course 01</dt><dd>00%</dd></div>
+            <div class="course"><dt>Course 02</dt><dd>00%</dd></div>
+            <div class="course"><dt>Course 03</dt><dd>00%</dd></div>
+            <div class="course"><dt>Course 04</dt><dd>00%</dd></div>
+            <div class="course"><dt>Course 05</dt><dd>00%</dd></div>
+            <div class="course"><dt>Course 06</dt><dd>00%</dd></div>
+          </dl>
+        </div>
       </div>
 
       <!-- title block / spec sheet -->
@@ -146,18 +157,6 @@
         <div class="tb-row"><dt>Graduation</dt><dd>December 2026</dd></div>
         <div class="tb-row"><dt>GPA</dt><dd>3.8</dd></div>
         <div class="tb-row"><dt>Location</dt><dd>Victoria, BC</dd></div>
-      </dl>
-
-      <!-- relevant courses (edit these + grades) -->
-      <dl class="titleblock courseblock reveal">
-        <div class="tb-top"><span>Relevant Courses</span><b>Grade</b></div>
-        <div class="tb-row"><dt>Sensors and Actuators (MECH 487)</dt><dd>90%</dd></div>
-        <div class="tb-row"><dt>Advanced Fluid Dynamics (MECH 431)</dt><dd>90%</dd></div>
-        <div class="tb-row"><dt>Design of Thermo-Fluid Systems</dt><dd>92%</dd></div>
-        <div class="tb-row"><dt>Instrumentation (MECH 455)</dt><dd>91%</dd></div>
-        <div class="tb-row"><dt>Materials for Sustainability (MECH 424)</dt><dd>93%</dd></div>
-        <div class="tb-row"><dt>Mechanics of Solids II</dt><dd>98%</dd></div>
-        <div class="tb-row"><dt>Control Systems II</dt><dd>98%</dd></div>
       </dl>
     </div>
   </div>
