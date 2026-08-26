@@ -31,6 +31,28 @@
   .exp-bullets li{margin-bottom:.35rem}
   @media(max-width:640px){.exp{grid-template-columns:1fr;gap:18px;padding:20px}}
 </style>
+<!-- ===== Projects: text left, small image right (added) ===== -->
+<style>
+  .proj{
+    grid-template-columns: 88px 1fr 200px;
+    align-items: start;
+    gap: clamp(16px, 4vw, 40px);
+  }
+  .proj-media{ display:flex; flex-direction:column; gap:10px; }
+  .proj-thumb{
+    width:100%;
+    aspect-ratio:4 / 3;
+    object-fit:cover;
+    display:block;
+    border:1px solid var(--rule-strong, #B3B9C0);
+    background:var(--paper-2, #FBFBFC);
+  }
+  .proj-media .proj-go{ align-self:flex-start; }
+  @media (max-width: 820px){
+    .proj{ grid-template-columns: 44px 1fr 96px; }
+    .proj-media .proj-go{ display:none; }
+  }
+</style>
 </head>
 <body>
 
@@ -212,7 +234,10 @@
           <p class="proj-org">Personal Project · 2026</p>
           <p class="proj-desc">A personal project combining integrated sensors, custom ESP32 firmware, and an airflow-driven 3D-printed enclosure to monitor particulate, CO2, and VOCs during wildfire-smoke season.</p>
         </div>
-        <span class="proj-go">View Project →</span>
+        <div class="proj-media">
+          <img class="proj-thumb" src="proj-airquality.jpg" alt="Air Quality Monitor" onerror="this.style.visibility='hidden'">
+          <span class="proj-go">View Project →</span>
+        </div>
       </a>
 
       <a class="proj reveal" href="project-wingfoil.html">
@@ -222,7 +247,10 @@
           <p class="proj-org">Tagmata Materials · 2026</p>
           <p class="proj-desc">A force measurement system that provides wind sport wing engineers with quantitative performance data, combining custom mechanical hardware with a fully waterproof electronics package for reliable capture in demanding on-water conditions.</p>
         </div>
-        <span class="proj-go">View Project →</span>
+        <div class="proj-media">
+          <img class="proj-thumb" src="proj-wingfoil.jpg" alt="Wing Foil Force Measurement System" onerror="this.style.visibility='hidden'">
+          <span class="proj-go">View Project →</span>
+        </div>
       </a>
 
       <a class="proj reveal" href="project-fsae.html">
@@ -232,7 +260,10 @@
           <p class="proj-org">UVic Formula Racing Club · 2026</p>
           <p class="proj-desc">Lightweight aluminum suspension components designed with simulation and optimization tools, balancing structural performance with manufacturability for UVic's 2026 EV race car.</p>
         </div>
-        <span class="proj-go">View Project →</span>
+        <div class="proj-media">
+          <img class="proj-thumb" src="proj-fsae.jpg" alt="FSAE Suspension A-Arm Nodes" onerror="this.style.visibility='hidden'">
+          <span class="proj-go">View Project →</span>
+        </div>
       </a>
       
       <a class="proj reveal" href="project-ctcjchip.html">
@@ -242,7 +273,10 @@
           <p class="proj-org">UVic · MECH 452 Microfluidics for Biomedical and Energy Applications · 2024</p>
           <p class="proj-desc">A microfluidic chip prototype designed to isolate circulating tumor cells from blood by size and magnetic labelling, working toward a low-cost, handheld cancer-screening tool receiving a perfect 100% project grade. </p>
         </div>
-        <span class="proj-go">View Project →</span>
+        <div class="proj-media">
+          <img class="proj-thumb" src="proj-ctcjchip.jpg" alt="CTC j-Chip Microfluidic Device" onerror="this.style.visibility='hidden'">
+          <span class="proj-go">View Project →</span>
+        </div>
       </a>
 
       <a class="proj reveal" href="project-minifridge.html">
@@ -252,7 +286,10 @@
           <p class="proj-org">UVic · Design of Thermofluid Systems · 2026</p>
           <p class="proj-desc">A thermo-fluid teardown and modelling study of a 1991 mini fridge, evaluating refrigerant, insulation, and compressor upgrades for efficiency and sustainability resulting in a grade of 94%.</p>
         </div>
-        <span class="proj-go">View Project →</span>
+        <div class="proj-media">
+          <img class="proj-thumb" src="proj-minifridge.jpg" alt="Mini Fridge Teardown and Thermal Redesign" onerror="this.style.visibility='hidden'">
+          <span class="proj-go">View Project →</span>
+        </div>
       </a>
       
      <a class="proj reveal" href="project-gearbox.html">
@@ -262,7 +299,10 @@
           <p class="proj-org">UVic · Design of Mechanical Elements · 2024</p>
           <p class="proj-desc">A four-stage speed-reduction gearbox for a 30 MW concentrated solar power plant, with gear, shaft, bearing, and fatigue analysis across all stages.</p>
         </div>
-        <span class="proj-go">View Project →</span>
+        <div class="proj-media">
+          <img class="proj-thumb" src="proj-gearbox.jpg" alt="CSP Turbine Gearbox" onerror="this.style.visibility='hidden'">
+          <span class="proj-go">View Project →</span>
+        </div>
       </a>
 
       <a class="proj reveal" href="project-robot.html">
@@ -272,7 +312,10 @@
           <p class="proj-org">UVic · Design Project · 2023</p>
           <p class="proj-desc">An autonomous robot for an Ocean Networks Canada challenge that searches an arena, homes in on a flashing infrared beacon by mapping signal strength, and places an object on the target to simulate sensor cleaning. I led the electronics and RobotC control logic resulting in a grade of 100%.</p>
         </div>
-        <span class="proj-go">View Project →</span>
+        <div class="proj-media">
+          <img class="proj-thumb" src="proj-robot.jpg" alt="Autonomous Search-and-Place Robot" onerror="this.style.visibility='hidden'">
+          <span class="proj-go">View Project →</span>
+        </div>
       </a>
 
     </div>
