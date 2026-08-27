@@ -86,6 +86,28 @@
     .skillcat-label{ padding-top:0; }
   }
 </style>
+<!-- ===== Hero: name left, framed photo right (added) ===== -->
+<style>
+  .hero-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:clamp(24px,5vw,64px);
+  }
+  .hero-text{ flex:1 1 auto; min-width:0; }
+  .hero-photo{ margin:0; flex:0 0 auto; text-align:center; }
+  .hero-photo img{
+    display:block; width:clamp(120px,17vw,180px); aspect-ratio:1/1;
+    object-fit:cover; border:1.5px solid var(--ink); background:var(--paper-2);
+  }
+  .hero-photo figcaption{
+    font-family:var(--font-mono); font-size:10px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted); margin-top:8px;
+  }
+  @media (max-width:640px){
+    .hero-inner{ flex-direction:column; align-items:flex-start; gap:22px; }
+    .hero-photo{ text-align:left; }
+    .hero-photo img{ width:130px; }
+  }
+</style>
 </head>
 <body>
 
@@ -109,7 +131,15 @@
 <!-- ================= HERO ================= -->
 <header class="hero">
   <div class="wrap">
-    <h1 class="reveal">Isla Stiven</h1>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1 class="reveal">Isla Stiven</h1>
+      </div>
+      <figure class="hero-photo reveal">
+        <img src="profile_pic.jpg" alt="Isla Stiven">
+        <figcaption>FIG 1 — I. STIVEN</figcaption>
+      </figure>
+    </div>
   </div>
 </header>
 
