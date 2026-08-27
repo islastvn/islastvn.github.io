@@ -217,7 +217,7 @@ a { color: inherit; }
 }
 .hero .role {
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 400;
   font-size: clamp(17px, 2.4vw, 22px);
   margin: 12px 0 0;
   color: var(--ink);
