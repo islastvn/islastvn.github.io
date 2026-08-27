@@ -69,18 +69,21 @@
   .skills-label::after{ content:""; flex:1; height:1px; background:var(--rule); }
   .about-prose .tools{ margin-top:12px; gap:6px; }
 
-  /* relevant courses — plain heading + text, low emphasis */
-  .courses{ margin-top:34px; }
-  .courses .skills-label{ margin-top:0; }
-  .courses-list{ margin:12px 0 0; }
-  .course{
-    display:flex; justify-content:space-between; gap:16px; align-items:baseline;
-    padding:3px 0;
+  /* categorized skills: label left, chips right */
+  .skillgroups{ margin-top:14px; }
+  .skillcat{
+    display:grid; grid-template-columns:96px 1fr; gap:16px;
+    align-items:start; padding:9px 0; border-top:1px solid var(--rule);
   }
-  .course dt{ font-size:14px; color:var(--ink); }
-  .course dd{
-    margin:0; font-family:var(--font-mono); font-size:12px;
-    color:var(--muted); white-space:nowrap;
+  .skillcat:first-child{ border-top:0; }
+  .skillcat-label{
+    font-family:var(--font-mono); font-size:11px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--muted); padding-top:7px;
+  }
+  .skillcat-chips{ display:flex; flex-wrap:wrap; gap:6px; }
+  @media (max-width:520px){
+    .skillcat{ grid-template-columns:1fr; gap:8px; }
+    .skillcat-label{ padding-top:0; }
   }
 </style>
 </head>
@@ -120,33 +123,41 @@
         <p>Welcome, I hope you enjoy exploring my work! I am in my final year of mechanical engineering at UVic with a specialization in thermo-fluids and aerodynamics. I've spent 12 months on co-op across mechanical design, mechatronics, and instrumentation, and what I enjoy most is taking something from an idea to a working, tested part. I'm at my best on hands-on teams where the designing, building, and testing all happen close together.</p>
 
         <p class="skills-label">Skills</p>
-        <div class="tools">
-          <span class="chip">SolidWorks</span>
-          <span class="chip">Siemens NX</span>
-          <span class="chip">FEA</span>
-          <span class="chip">CFD</span>
-          <span class="chip">Design for Manufacturing</span>
-          <span class="chip">Instrumentation</span>
-          <span class="chip">Rapid Prototyping</span>
-          <span class="chip">PCB Design</span>
-          <span class="chip">Soldering</span>
-          <span class="chip">MATLAB</span>
-          <span class="chip">Python</span>
-          <span class="chip">C++</span>
-          <span class="chip">Shop Tools</span>
-          <span class="chip">GD&amp;T</span>
-        </div>
-
-        <div class="courses">
-          <p class="skills-label">Relevant Courses</p>
-          <dl class="courses-list">
-            <div class="course"><dt>Sensors and Actuators (MECH 487)</dt><dd>90%</dd></div>
-            <div class="course"><dt>Design of Thermo-Fluid Systems (MECH 493)</dt><dd>92%</dd></div>
-            <div class="course"><dt>Advanced Fluid Dynamics (MECH 431)</dt><dd>90%</dd></div>
-            <div class="course"><dt>Instrumentation (MECH 455)</dt><dd>91%</dd></div>
-            <div class="course"><dt>Computer-Aided Design (MECH 410)</dt><dd>86%</dd></div>
-            <div class="course"><dt>Hydrostatics and Dynamics (MECH 441)</dt><dd>96%</dd></div>
-          </dl>
+        <div class="skillgroups">
+          <div class="skillcat">
+            <span class="skillcat-label">Mechanical</span>
+            <div class="skillcat-chips">
+              <span class="chip">SolidWorks</span>
+              <span class="chip">Siemens NX</span>
+              <span class="chip">FEA</span>
+              <span class="chip">CFD</span>
+              <span class="chip">GD&amp;T</span>
+              <span class="chip">Design for Manufacturing</span>
+            </div>
+          </div>
+          <div class="skillcat">
+            <span class="skillcat-label">Electrical</span>
+            <div class="skillcat-chips">
+              <span class="chip">PCB Design</span>
+              <span class="chip">Instrumentation</span>
+              <span class="chip">Soldering</span>
+            </div>
+          </div>
+          <div class="skillcat">
+            <span class="skillcat-label">Programming</span>
+            <div class="skillcat-chips">
+              <span class="chip">Python</span>
+              <span class="chip">C++</span>
+              <span class="chip">MATLAB</span>
+            </div>
+          </div>
+          <div class="skillcat">
+            <span class="skillcat-label">Tools</span>
+            <div class="skillcat-chips">
+              <span class="chip">Rapid Prototyping</span>
+              <span class="chip">Shop Tools</span>
+            </div>
+          </div>
         </div>
       </div>
 
